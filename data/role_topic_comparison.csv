@@ -1,37 +1,41 @@
 role,topic,topic_id,proportion
-executive,Digital Media & Advertising,0,0.10980427
-executive,Investor Conference (General),1,0.06090234
-executive,Nordic / European Small Caps,2,0.009881615
-executive,"Aerospace, Defense & Industrials",3,0.056829635
-executive,Real Estate & REITs,4,0.066076845
-executive,Financial Services Conference,5,0.065871015
-executive,"Mining, Metals & Materials",6,0.024976315
-executive,"Oil, Gas & Energy",7,0.016877595
-executive,Industrial Conference (Mixed),8,0.07338351
-executive,Transport & Logistics,9,0.012422286
-executive,Insurance & Specialty Finance,10,0.08997926
-executive,Healthcare Conference,11,0.040880974
-executive,Biotechnology & Drug R&D,12,0.03664515
-executive,Australian & Pacific Markets,13,0.0423239
-executive,Energy Infrastructure & Utilities,14,0.06316656
-executive,Nordic Markets (Conf.),15,0.10296349
-executive,Industrial Manufacturing,16,0.08846526
-executive,Semiconductors & Electronics,17,0.038549993
-analyst,Digital Media & Advertising,0,0.14210176
-analyst,Investor Conference (General),1,0.023726266
-analyst,Nordic / European Small Caps,2,0.010633831
-analyst,"Aerospace, Defense & Industrials",3,0.09915417
-analyst,Real Estate & REITs,4,0.099743545
-analyst,Financial Services Conference,5,0.05024013
-analyst,"Mining, Metals & Materials",6,0.017182143
-analyst,"Oil, Gas & Energy",7,0.03361529
-analyst,Industrial Conference (Mixed),8,0.017202629
-analyst,Transport & Logistics,9,0.0067746565
-analyst,Insurance & Specialty Finance,10,0.030109024
-analyst,Healthcare Conference,11,0.041790668
-analyst,Biotechnology & Drug R&D,12,0.04269863
-analyst,Australian & Pacific Markets,13,0.06926081
-analyst,Energy Infrastructure & Utilities,14,0.06485786
-analyst,Nordic Markets (Conf.),15,0.063160956
-analyst,Industrial Manufacturing,16,0.15439337
-analyst,Semiconductors & Electronics,17,0.03335424
+executive,Real Estate & REITs,0,0.07465172559022903
+executive,General Financial Performance,1,0.0
+executive,Shipping & Offshore Drilling,2,0.00735939247533679
+executive,Telecom & Networks,3,0.012516191229224205
+executive,European Industrials,4,0.06192639842629433
+executive,"Oil, Gas & Energy Production",5,0.04404290392994881
+executive,Software & Enterprise Tech,6,0.10847446322441101
+executive,Healthcare Services,7,0.05360155180096626
+executive,Asian & International Markets,8,0.009068225510418415
+executive,Insurance & Reinsurance,9,0.019414113834500313
+executive,Biotechnology & Drug R&D,10,0.05497327074408531
+executive,Banking & Credit,11,0.07490503787994385
+executive,Consumer Tech & Marketing,12,0.05391855910420418
+executive,Infrastructure & Capital Projects,13,0.11401799321174622
+executive,Automotive & Industrial Tech,14,0.03566610440611839
+executive,Australian Markets,15,0.019189685583114624
+executive,Consumer Products & Pricing,16,0.16847437620162964
+executive,"Aerospace, Defense & Space",17,0.005948094185441732
+executive,European Energy & Materials,18,0.0788126289844513
+executive,Education & Niche Sectors,19,0.0030392443295568228
+analyst,Real Estate & REITs,0,0.06997630000114441
+analyst,General Financial Performance,1,2.2676395872167632e-08
+analyst,Shipping & Offshore Drilling,2,0.0066918074153363705
+analyst,Telecom & Networks,3,0.01542105246335268
+analyst,European Industrials,4,0.02004677802324295
+analyst,"Oil, Gas & Energy Production",5,0.04853000491857529
+analyst,Software & Enterprise Tech,6,0.12028253823518753
+analyst,Healthcare Services,7,0.07918626070022583
+analyst,Asian & International Markets,8,0.003239385550841689
+analyst,Insurance & Reinsurance,9,0.017405465245246887
+analyst,Biotechnology & Drug R&D,10,0.057959042489528656
+analyst,Banking & Credit,11,0.057367902249097824
+analyst,Consumer Tech & Marketing,12,0.03063795156776905
+analyst,Infrastructure & Capital Projects,13,0.08612170070409775
+analyst,Automotive & Industrial Tech,14,0.015415911562740803
+analyst,Australian Markets,15,0.030024453997612
+analyst,Consumer Products & Pricing,16,0.235687255859375
+analyst,"Aerospace, Defense & Space",17,0.004397528246045113
+analyst,European Energy & Materials,18,0.09980187565088272
+analyst,Education & Niche Sectors,19,0.0018067798810079694

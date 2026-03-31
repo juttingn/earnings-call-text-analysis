@@ -38,13 +38,19 @@ cat("Beta matrix: ", nrow(beta), "rows\n")
 topic_cols <- names(gamma)[str_starts(names(gamma), "topic_")]
 K <- length(topic_cols)
 
-# Ensure date columns are proper types
+# Ensure date columns are proper types.
+# We restrict temporal visualizations to periods up to and including Q4 2025,
+# since the corpus is dominated by the Q4 2025 reporting season (~1,851 docs).
+# The small number of Q1–Q3 2026 documents (off-calendar FY companies) are
+# excluded from the temporal charts to avoid misleading sparsity artefacts.
+
+PERIODS_TO_PLOT <- c("Q2 2025", "Q3 2025", "Q4 2025")
+
 gamma <- gamma %>%
   mutate(
     call_date        = as.Date(call_date),
     call_month       = as.Date(call_month),
     call_week        = as.Date(call_week),
-    # Order reporting periods chronologically
     reporting_period = factor(reporting_period,
       levels = c("Q2 2025", "Q3 2025", "Q4 2025",
                  "Q1 2026", "Q2 2026", "Q3 2026", "Q4 2026"))
@@ -86,9 +92,9 @@ gamma_long <- gamma %>%
   mutate(topic_id = as.integer(str_extract(topic_col, "[0-9]+"))) %>%
   left_join(label_map, by = "topic_id")
 
-# Aggregate by reporting period
+# Aggregate by reporting period — restrict to Q4 2025 and earlier
 period_topics <- gamma_long %>%
-  filter(!is.na(reporting_period)) %>%
+  filter(!is.na(reporting_period), reporting_period %in% PERIODS_TO_PLOT) %>%
   group_by(reporting_period, topic_id, label) %>%
   summarise(mean_prob = mean(probability, na.rm = TRUE), .groups = "drop") %>%
   group_by(reporting_period) %>%
@@ -199,7 +205,7 @@ if (nrow(weekly_topics) > 0) {
 # =============================================================================
 
 heatmap_data <- period_topics %>%
-  filter(!is.na(reporting_period))
+  filter(!is.na(reporting_period), reporting_period %in% PERIODS_TO_PLOT)
 
 p3 <- ggplot(heatmap_data,
              aes(x = reporting_period,
@@ -288,7 +294,7 @@ cat("Saved figures/08_topic_terms_dotplot.png\n")
 if ("dominant_topic" %in% names(gamma)) {
 
   dominant_by_period <- gamma %>%
-    filter(!is.na(reporting_period)) %>%
+    filter(!is.na(reporting_period), reporting_period %in% PERIODS_TO_PLOT) %>%
     left_join(label_map, by = c("dominant_topic" = "topic_id")) %>%
     group_by(reporting_period, label) %>%
     summarise(n_docs = n(), .groups = "drop") %>%

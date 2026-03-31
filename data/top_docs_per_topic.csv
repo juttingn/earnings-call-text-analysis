@@ -1,91 +1,95 @@
 dominant_topic,label,company_name,ticker,call_date,dominant_prob
-0,Digital Media & Advertising,Taboola,TBLA,2026-02-25,0.9906554
-0,Digital Media & Advertising,Roku Inc,ROKU,2026-02-12,0.98405105
-0,Digital Media & Advertising,Roblox Corp,RBLX,2026-02-05,0.9791421
-0,Digital Media & Advertising,Unity Software Inc,U,2026-02-11,0.9628078
-0,Digital Media & Advertising,Yum! Brands,YUM,2026-02-04,0.9625598
-1,Investor Conference (General),Barclays 43rd Annual Industrial Select Conference,NA,2026-02-18,0.9161857
-1,Investor Conference (General),Barclays 43rd Annual Industrial Select Conference,NA,2026-02-17,0.8538199
-1,Investor Conference (General),47th Annual Raymond James Institutional Investor Conference,NA,2026-03-02,0.80031925
-1,Investor Conference (General),Federal Reserve Bank of Chicago’s Automotive Insights Symposium,NA,2026-02-05,0.7997356
-1,Investor Conference (General),Barclays 43rd Annual Industrial Select Conference,NA,2026-02-17,0.7954016
-2,Nordic / European Small Caps,Bouvet ASA,NA,2026-02-13,0.99578184
-2,Nordic / European Small Caps,Veidekke ASA,NA,2026-02-12,0.99549454
-2,Nordic / European Small Caps,Iconovo,ICO,2026-03-02,0.9798801
-2,Nordic / European Small Caps,Brasilagro Adr,LND,2026-02-06,0.9540627
-2,Nordic / European Small Caps,Botnia Exploration Holding AB,BOTX,2026-02-04,0.8525146
-3,"Aerospace, Defense & Industrials",Morgan Stanley’s 13th Annual Laguna Conference,NA,2025-09-11,0.90390694
-3,"Aerospace, Defense & Industrials",Citi’s Global Industrial Tech & Mobility Conference,NA,2026-02-18,0.88938487
-3,"Aerospace, Defense & Industrials",Citi’s Global Industrial Tech & Mobility Conference,NA,2026-02-19,0.85077405
-3,"Aerospace, Defense & Industrials",L3Harris Technologies Inc,LHX,2026-02-03,0.84330297
-3,"Aerospace, Defense & Industrials",V2X Inc,VVX,2026-02-23,0.78667223
-4,Real Estate & REITs,Tekova Oy,TEKOVA,2026-02-12,0.9882877
-4,Real Estate & REITs,Sabra Healthcare REIT Inc,SBRA,2026-02-13,0.982347
-4,Real Estate & REITs,Highwoods Properties,HIW,2026-02-11,0.9441736
-4,Real Estate & REITs,Urban Edge Properties,UE,2026-02-11,0.9428273
-4,Real Estate & REITs,Regency Centers Corp,REG,2026-02-06,0.9348124
-5,Financial Services Conference,Bank of America Financial Services Conference,NA,2026-02-11,0.9585239
-5,Financial Services Conference,Bank of America Financial Services Conference,NA,2026-02-11,0.9569671
-5,Financial Services Conference,Bank of America Financial Services Conference,NA,2026-02-10,0.9506442
-5,Financial Services Conference,Bank of America Financial Services Conference,NA,2026-02-10,0.9113866
-5,Financial Services Conference,UBS Financial Services Conference,NA,2026-02-09,0.89626145
-6,"Mining, Metals & Materials",Ramelius Resources Ltd,RMS,2026-02-03,0.93472266
-6,"Mining, Metals & Materials",Sibanye Gold Ltd ADR,SBSW,2026-02-20,0.86751264
-6,"Mining, Metals & Materials","35th BMO Global Metals, Mining & Critical Minerals Conference",NA,2026-02-24,0.78249615
-6,"Mining, Metals & Materials",Warrior Met Coal Inc,HCC,2026-02-12,0.73165363
-6,"Mining, Metals & Materials",Aura Minerals Inc,AUGO,2026-02-27,0.7033103
-7,"Oil, Gas & Energy",Targa Resources Inc,TRGP,2026-02-19,0.9924681
-7,"Oil, Gas & Energy",Viper Energy Inc,VNOM,2026-02-24,0.9510446
-7,"Oil, Gas & Energy",Tamarack Valley Energy Ltd,TVE,2026-02-25,0.948549
-7,"Oil, Gas & Energy",SM Energy Co,SM,2026-02-26,0.9211729
-7,"Oil, Gas & Energy",Chord Energy Corp,CHRD,2026-02-26,0.81551576
-8,Industrial Conference (Mixed),Citi’s Global Industrial Tech & Mobility Conference,NA,2026-02-17,0.83029634
-8,Industrial Conference (Mixed),Barclays 43rd Annual Industrial Select Conference,NA,2026-02-18,0.8277976
-8,Industrial Conference (Mixed),UBS Financial Services Conference,NA,2026-02-10,0.7148811
-8,Industrial Conference (Mixed),Barclays 43rd Annual Industrial Select Conference,NA,2026-02-18,0.66686314
-8,Industrial Conference (Mixed),Piper Sandler 4th Annual Growth Frontiers Conference,NA,2025-09-11,0.6268004
-9,Transport & Logistics,Barclays 43rd Annual Industrial Select Conference,NA,2026-02-17,0.9112756
-9,Transport & Logistics,RNFI Services Ltd,RNFI,2026-02-13,0.8537757
-9,Transport & Logistics,Barclays 43rd Annual Industrial Select Conference,NA,2026-02-19,0.7017335
-9,Transport & Logistics,Southwest Airlines,LUV,2026-02-03,0.63969886
-9,Transport & Logistics,Barclays 43rd Annual Industrial Select Conference,NA,2026-02-18,0.61437774
-10,Insurance & Specialty Finance,Reinsurance Group of America Inc,RGA,2026-02-06,0.9948774
-10,Insurance & Specialty Finance,Wesco Intl,WCC,2026-02-10,0.99445677
-10,Insurance & Specialty Finance,Youdao Inc,DAO,2026-02-11,0.9917335
-10,Insurance & Specialty Finance,Chubb Corp,CB,2026-02-04,0.9903087
-10,Insurance & Specialty Finance,Universal Insurance Holdings Inc,UVE,2026-02-25,0.9900557
-11,Healthcare Conference,TD Cowen 46th Annual Health Care Conference,NA,2026-03-02,0.9153083
-11,Healthcare Conference,Citi’s,NA,2026-02-26,0.7416635
-11,Healthcare Conference,Guggenheim Securities Emerging Outlook: Biotech Summit,NA,2026-02-11,0.7285336
-11,Healthcare Conference,Guggenheim Securities Emerging Outlook: Biotech Summit,NA,2026-02-12,0.72236866
-11,Healthcare Conference,Amphastar P,AMPH,2026-02-26,0.69349116
-12,Biotechnology & Drug R&D,Vir Biotechnology Inc,VIR,2026-02-24,0.99917465
-12,Biotechnology & Drug R&D,Oppenheimer 36th Annual Healthcare Life Sciences Conference,NA,2026-02-26,0.9991051
-12,Biotechnology & Drug R&D,Guggenheim Securities Emerging Outlook: Biotech Summit,NA,2026-02-11,0.9986367
-12,Biotechnology & Drug R&D,Immunovant Inc,IMVT,2026-02-06,0.99854916
-12,Biotechnology & Drug R&D,Oppenheimer 36th Annual Healthcare Life Sciences Conference,NA,2026-02-26,0.9983393
-13,Australian & Pacific Markets,Waypoint REIT Ltd,WPR,2026-02-25,0.8972008
-13,Australian & Pacific Markets,Dalrymple Bay Infrastructure Ltd,DBI,2026-02-24,0.81074524
-13,Australian & Pacific Markets,Viva Energy Group Ltd,VEA,2026-02-24,0.8057414
-13,Australian & Pacific Markets,Propel Funeral Partners Ltd,PFP,2026-02-24,0.8005196
-13,Australian & Pacific Markets,Winton Land Ltd,WTN,2026-02-20,0.7886233
-14,Energy Infrastructure & Utilities,TransAlta Corp,TAC,2026-02-27,0.9990838
-14,Energy Infrastructure & Utilities,TC Energy Corp,TRP,2026-02-13,0.8958075
-14,Energy Infrastructure & Utilities,Arabian Drilling Co,NA,2026-03-02,0.78058434
-14,Energy Infrastructure & Utilities,Tetra Technologies Inc,TTI,2026-02-26,0.7662129
-14,Energy Infrastructure & Utilities,Transportadora de Gas del Sur SA ADR,TGS,2026-03-02,0.7649425
-15,Nordic Markets (Conf.),Aker Solutions L,NA,2026-02-06,0.98330116
-15,Nordic Markets (Conf.),Nelly Group AB,NELLY,2026-02-10,0.9779525
-15,Nordic Markets (Conf.),Fodelia Oyj,NA,2026-02-05,0.93867844
-15,Nordic Markets (Conf.),Borgestad A,BOR,2026-02-26,0.9040494
-15,Nordic Markets (Conf.),Multiconsult AS SE,MULTI,2026-02-10,0.8878551
-16,Industrial Manufacturing,Quaker Chemical Corp,KWR,2026-02-24,0.7973278
-16,Industrial Manufacturing,Citi’s Global Industrial Tech & Mobility Conference,NA,2026-02-19,0.7440081
-16,Industrial Manufacturing,Barclays 43rd Annual Industrial Select Conference,NA,2026-02-18,0.6874076
-16,Industrial Manufacturing,Illinois Tool Works Inc,ITW,2026-02-03,0.66820997
-16,Industrial Manufacturing,Mohawk Industries Inc,MHK,2026-02-13,0.6569957
-17,Semiconductors & Electronics,Advantest Corp.,NA,2026-02-03,0.9987467
-17,Semiconductors & Electronics,Silicon Motion Technology,SIMO,2026-02-04,0.94327265
-17,Semiconductors & Electronics,Renesas Electronics Corp,NA,2026-02-05,0.85592055
-17,Semiconductors & Electronics,QUALCOMM Incorporated,QCOM,2026-02-04,0.8330776
-17,Semiconductors & Electronics,Tower Semiconductor Ltd,TSEM,2026-02-11,0.8155406
+0,Real Estate & REITs,Whitestone REIT,WSR,2026-02-26,0.9989927
+0,Real Estate & REITs,Urban Edge Properties,UE,2026-02-11,0.99826056
+0,Real Estate & REITs,Sila Realty Trust Inc,SILA,2026-02-25,0.99772185
+0,Real Estate & REITs,Clipper Realty Inc,CLPR,2026-02-26,0.994173
+0,Real Estate & REITs,Alexanders Inc,ALX,2026-02-10,0.99049723
+2,Shipping & Offshore Drilling,Teekay Tankers Ltd,TNK,2026-02-19,0.9978269
+2,Shipping & Offshore Drilling,Teekay Corp,TK,2026-02-19,0.9977615
+2,Shipping & Offshore Drilling,SFL Corporation Ltd,SFL,2026-02-11,0.99602985
+2,Shipping & Offshore Drilling,Sea1 Offshore Inc,NA,2026-02-12,0.9950266
+2,Shipping & Offshore Drilling,Solstad Offsho,SOFF,2026-02-12,0.9899647
+3,Telecom & Networks,Telephone and Data Systems Inc,TDS,2026-02-20,0.9796933
+3,Telecom & Networks,Array Digital Infrastructure Inc,AD,2026-02-20,0.9793709
+3,Telecom & Networks,Uniti Group Inc,UNIT,2026-03-02,0.9711687
+3,Telecom & Networks,XL Axiata Tbk PT,EXCL,2026-02-13,0.9462884
+3,Telecom & Networks,Barclays Communications and Content Symposium,NA,2026-02-24,0.7841205
+4,European Industrials,Tallinna Vesi AS,NA,2026-02-06,0.986078
+4,European Industrials,Nelly Group AB,NELLY,2026-02-10,0.9733031
+4,European Industrials,Vestum AB,VESTUM,2026-02-12,0.96503943
+4,European Industrials,Fodelia Oyj,NA,2026-02-05,0.93499166
+4,European Industrials,TKMS GmbH,TKMS,2026-02-11,0.9332127
+5,"Oil, Gas & Energy Production",Bouvet ASA,NA,2026-02-13,0.98661244
+5,"Oil, Gas & Energy Production",Veidekke ASA,NA,2026-02-12,0.96525496
+5,"Oil, Gas & Energy Production",SM Energy Co,SM,2026-02-26,0.9374003
+5,"Oil, Gas & Energy Production",Lundin Gold Inc,LUG,2026-02-20,0.92385364
+5,"Oil, Gas & Energy Production",Ramelius Resources Ltd,RMS,2026-02-03,0.9178331
+6,Software & Enterprise Tech,PTC Inc,PTC,2026-02-04,0.9987744
+6,Software & Enterprise Tech,Radware Ltd,RDWR,2026-02-11,0.99788463
+6,Software & Enterprise Tech,Varonis Systems,VRNS,2026-02-03,0.9891666
+6,Software & Enterprise Tech,Synopsys Inc,SNPS,2026-02-25,0.98444533
+6,Software & Enterprise Tech,Silicon Motion Technology,SIMO,2026-02-04,0.9674734
+7,Healthcare Services,Universal Health Services,UHS,2026-02-26,0.99918324
+7,Healthcare Services,Vericel Corp Ord,VCEL,2026-02-26,0.99866945
+7,Healthcare Services,Tenet Healthcare Corporation,THC,2026-02-11,0.9816038
+7,Healthcare Services,US Physical Therapy Inc,USPH,2026-02-26,0.9774825
+7,Healthcare Services,Select Medical Holdings Corp,SEM,2026-02-20,0.9487235
+8,Asian & International Markets,Digia Oyj,DIGIA,2026-02-05,0.9708631
+8,Asian & International Markets,Teleste Oyj,NA,2026-02-13,0.9652665
+8,Asian & International Markets,Tekova Oy,TEKOVA,2026-02-12,0.9624012
+8,Asian & International Markets,NEC Corp.,NA,2026-02-03,0.9575953
+8,Asian & International Markets,Yamaha Corp.,NA,2026-02-09,0.9408216
+9,Insurance & Reinsurance,Skyward Specialty Insurance Group Inc,SKWD,2026-02-24,0.93210435
+9,Insurance & Reinsurance,Bank of America Financial Services Conference,NA,2026-02-10,0.91246325
+9,Insurance & Reinsurance,Voya Financial Inc,VOYA,2026-02-04,0.88134736
+9,Insurance & Reinsurance,Trisura Group Ltd,TSU,2026-02-13,0.84565127
+9,Insurance & Reinsurance,Slide Insurance Holdings Inc,SLDE,2026-02-25,0.84357023
+10,Biotechnology & Drug R&D,Syndax Pharmaceuticals,SNDX,2026-02-26,0.9991495
+10,Biotechnology & Drug R&D,Vir Biotechnology Inc,VIR,2026-02-24,0.99911284
+10,Biotechnology & Drug R&D,Wave Life Sciences Ltd,WVE,2026-02-26,0.9991075
+10,Biotechnology & Drug R&D,Roivant Sciences Ltd,ROIV,2026-02-06,0.9990833
+10,Biotechnology & Drug R&D,Oppenheimer 36th Annual Healthcare Life Sciences Conference,NA,2026-02-26,0.9990269
+11,Banking & Credit,Bank of America Financial Services Conference,NA,2026-02-11,0.924317
+11,Banking & Credit,Bank of America Financial Services Conference,NA,2026-02-11,0.9054296
+11,Banking & Credit,Van Lanschot Kempen NV,NA,2026-02-26,0.8622494
+11,Banking & Credit,Banco Santander SA ADR,SAN,2026-02-03,0.82659346
+11,Banking & Credit,Yapi Ve Kredi Bank.-EXCH,YKBNK,2026-02-05,0.825033
+12,Consumer Tech & Marketing,Tripadvisor Inc,TRIP,2026-02-12,0.89256376
+12,Consumer Tech & Marketing,The Trade Desk,TTD,2026-02-27,0.87554437
+12,Consumer Tech & Marketing,The Trade Desk,TTD,2026-02-25,0.87086266
+12,Consumer Tech & Marketing,Roblox Corp,RBLX,2026-02-05,0.856057
+12,Consumer Tech & Marketing,Roku Inc,ROKU,2026-02-12,0.82760525
+13,Infrastructure & Capital Projects,Talen Energy Corp,TLN,2026-02-26,0.96305275
+13,Infrastructure & Capital Projects,Southern,SO,2026-02-19,0.9563447
+13,Infrastructure & Capital Projects,Terawulf Inc,WULF,2026-02-26,0.9523501
+13,Infrastructure & Capital Projects,Morgan Stanley’s 13th Annual Laguna Conference,NA,2025-09-11,0.95150506
+13,Infrastructure & Capital Projects,PPL Corp,PPL,2026-02-20,0.92057973
+14,Automotive & Industrial Tech,Piper Sandler 4th Annual Growth Frontiers Conference,NA,2025-09-11,0.96901566
+14,Automotive & Industrial Tech,Bank of America,NA,2026-02-25,0.8029499
+14,Automotive & Industrial Tech,Barclays 43rd Annual Industrial Select Conference,NA,2026-02-17,0.70415825
+14,Automotive & Industrial Tech,"Bernstein Insights: What’s next in tech? - 4th Annual Tech, Media, Telecom Forum",NA,2026-02-27,0.6762951
+14,Automotive & Industrial Tech,Federal Reserve Bank of Chicago’s Automotive Insights Symposium,NA,2026-02-05,0.65397286
+15,Australian Markets,PGG Wrightson Ltd,PGW,2026-02-24,0.85904986
+15,Australian Markets,Region Re Ltd Unit,RGN,2026-02-10,0.7209835
+15,Australian Markets,EVT Ltd,EVT,2026-02-23,0.65971285
+15,Australian Markets,Winton Land Ltd,WTN,2026-02-20,0.62880296
+15,Australian Markets,Move Logistics Group Ltd,MOV,2026-02-26,0.586688
+16,Consumer Products & Pricing,Reynolds Consumer Products Inc,REYN,2026-02-04,0.9948563
+16,Consumer Products & Pricing,Steven Madden Ltd,SHOO,2026-02-25,0.98566514
+16,Consumer Products & Pricing,Topbuild Corp,BLD,2026-02-26,0.9758829
+16,Consumer Products & Pricing,Central Garden & Pet Company,CENT,2026-02-04,0.9749648
+16,Consumer Products & Pricing,Consumer Analyst Group of New York Conference CAGNY,NA,2026-02-17,0.9718569
+17,"Aerospace, Defense & Space",Citi’s Global Industrial Tech & Mobility Conference,NA,2026-02-19,0.9230921
+17,"Aerospace, Defense & Space","Rocket Lab USA, Inc.",RKLB,2026-02-26,0.65768826
+17,"Aerospace, Defense & Space",SomnoMed Ltd,SOM,2026-02-26,0.54351985
+17,"Aerospace, Defense & Space",Quantumscape Corp,QS,2026-02-11,0.5192979
+17,"Aerospace, Defense & Space",REC Silicon ASA,NA,2026-02-12,0.5035411
+18,European Energy & Materials,Solvay SA,NA,2026-02-24,0.9862342
+18,European Energy & Materials,Safran L,NA,2026-02-13,0.9808053
+18,European Energy & Materials,Aperam SA,NA,2026-02-06,0.97859657
+18,European Energy & Materials,R&S Group Holding AG,RSGN,2025-09-11,0.96819735
+18,European Energy & Materials,Sulzer AG,NA,2026-02-26,0.9383609
+19,Education & Niche Sectors,Racing Force SpA,RFG,2026-02-04,0.9955548
+19,Education & Niche Sectors,Universal Technical Institute Inc,UTI,2026-02-04,0.98858756
+19,Education & Niche Sectors,Strategic Education Inc,STRA,2026-02-26,0.4715425
+19,Education & Niche Sectors,"Bernstein Insights: What’s next in tech? - 4th Annual Tech, Media, Telecom Forum",NA,2026-02-26,0.4260018

@@ -1,541 +1,601 @@
 topic,label,term,probability
-0,Digital Media & Advertising,customer,0.01080315
-0,Digital Media & Advertising,revenue,0.007874169
-0,Digital Media & Advertising,please,0.0064275293
-0,Digital Media & Advertising,product,0.005446529
-0,Digital Media & Advertising,seeing,0.005262801
-0,Digital Media & Advertising,come,0.005225109
-0,Digital Media & Advertising,opportunity,0.004958994
-0,Digital Media & Advertising,platform,0.0047563957
-0,Digital Media & Advertising,taking,0.004722016
-0,Digital Media & Advertising,guy,0.0043417886
-0,Digital Media & Advertising,brand,0.0041948515
-0,Digital Media & Advertising,ahead,0.0038886212
-0,Digital Media & Advertising,way,0.0038759673
-0,Digital Media & Advertising,margin,0.0037819492
-0,Digital Media & Advertising,across,0.0036880265
-0,Digital Media & Advertising,want,0.0034429627
-0,Digital Media & Advertising,sale,0.003362649
-0,Digital Media & Advertising,hey,0.003304836
-0,Digital Media & Advertising,around,0.0032960984
-0,Digital Media & Advertising,talk,0.003225413
-0,Digital Media & Advertising,guidance,0.0031762607
-0,Digital Media & Advertising,make,0.003085819
-0,Digital Media & Advertising,consumer,0.0030324925
-0,Digital Media & Advertising,ask,0.002890274
-0,Digital Media & Advertising,marketing,0.002837514
-0,Digital Media & Advertising,obviously,0.0027359456
-0,Digital Media & Advertising,follow,0.0027134516
-0,Digital Media & Advertising,may,0.002704742
-0,Digital Media & Advertising,sort,0.0026889567
-0,Digital Media & Advertising,performance,0.002556367
-1,Investor Conference (General),customer,0.010575429
-1,Investor Conference (General),got,0.00948303
-1,Investor Conference (General),gon,0.00912717
-1,Investor Conference (General),hmm,0.008341425
-1,Investor Conference (General),mean,0.008069905
-1,Investor Conference (General),way,0.0072689727
-1,Investor Conference (General),people,0.006768873
-1,Investor Conference (General),data,0.0064853574
-1,Investor Conference (General),make,0.0056816502
-1,Investor Conference (General),talk,0.0056181927
-1,Investor Conference (General),want,0.0055256383
-1,Investor Conference (General),need,0.0055073737
-1,Investor Conference (General),power,0.0047650356
-1,Investor Conference (General),center,0.004684585
-1,Investor Conference (General),technology,0.004584388
-1,Investor Conference (General),industry,0.004454937
-1,Investor Conference (General),system,0.0044230362
-1,Investor Conference (General),pretty,0.0043137167
-1,Investor Conference (General),around,0.0042457366
-1,Investor Conference (General),big,0.0042373557
-1,Investor Conference (General),still,0.0040984815
-1,Investor Conference (General),probably,0.004079034
-1,Investor Conference (General),able,0.0037833336
-1,Investor Conference (General),work,0.003777668
-1,Investor Conference (General),long,0.0037059586
-1,Investor Conference (General),different,0.0037049954
-1,Investor Conference (General),opportunity,0.003695689
-1,Investor Conference (General),side,0.0036473367
-1,Investor Conference (General),something,0.0034296773
-1,Investor Conference (General),ago,0.003351188
-2,Nordic / European Small Caps,fiber,0.015564625
-2,Nordic / European Small Caps,network,0.0120487455
-2,Nordic / European Small Caps,revenue,0.009785677
-2,Nordic / European Small Caps,mobile,0.008089151
-2,Nordic / European Small Caps,customer,0.007812555
-2,Nordic / European Small Caps,arpu,0.0068270396
-2,Nordic / European Small Caps,cost,0.006768184
-2,Nordic / European Small Caps,det,0.0062721465
-2,Nordic / European Small Caps,service,0.006224768
-2,Nordic / European Small Caps,churn,0.005284596
-2,Nordic / European Small Caps,spectrum,0.0052329027
-2,Nordic / European Small Caps,capex,0.0051281312
-2,Nordic / European Small Caps,broadband,0.0048888545
-2,Nordic / European Small Caps,subscriber,0.004884761
-2,Nordic / European Small Caps,wireless,0.0047186567
-2,Nordic / European Small Caps,cable,0.004607586
-2,Nordic / European Small Caps,mean,0.0046039526
-2,Nordic / European Small Caps,cash,0.004346595
-2,Nordic / European Small Caps,opportunity,0.0042765127
-2,Nordic / European Small Caps,ebitda,0.004104786
-2,Nordic / European Small Caps,strategy,0.0039826483
-2,Nordic / European Small Caps,tower,0.00394333
-2,Nordic / European Small Caps,mentioned,0.0038521762
-2,Nordic / European Small Caps,expect,0.003737186
-2,Nordic / European Small Caps,increase,0.0037227722
-2,Nordic / European Small Caps,digital,0.0036745255
-2,Nordic / European Small Caps,morning,0.00358517
-2,Nordic / European Small Caps,telecom,0.003551648
-2,Nordic / European Small Caps,value,0.0035071813
-2,Nordic / European Small Caps,let,0.0033229047
-3,"Aerospace, Defense & Industrials",revenue,0.0105145145
-3,"Aerospace, Defense & Industrials",margin,0.009908335
-3,"Aerospace, Defense & Industrials",opportunity,0.0099015925
-3,"Aerospace, Defense & Industrials",customer,0.008437928
-3,"Aerospace, Defense & Industrials",got,0.0069581945
-3,"Aerospace, Defense & Industrials",gon,0.0062113428
-3,"Aerospace, Defense & Industrials",program,0.005538644
-3,"Aerospace, Defense & Industrials",sort,0.005444065
-3,"Aerospace, Defense & Industrials",guy,0.005138385
-3,"Aerospace, Defense & Industrials",backlog,0.005031595
-3,"Aerospace, Defense & Industrials",cash,0.0048997216
-3,"Aerospace, Defense & Industrials",talk,0.004835696
-3,"Aerospace, Defense & Industrials",defense,0.0044996026
-3,"Aerospace, Defense & Industrials",mean,0.004300558
-3,"Aerospace, Defense & Industrials",service,0.0042384723
-3,"Aerospace, Defense & Industrials",part,0.00414787
-3,"Aerospace, Defense & Industrials",seeing,0.0040472983
-3,"Aerospace, Defense & Industrials",side,0.003905412
-3,"Aerospace, Defense & Industrials",work,0.0038145382
-3,"Aerospace, Defense & Industrials",contract,0.0038074586
-3,"Aerospace, Defense & Industrials",space,0.0037733633
-3,"Aerospace, Defense & Industrials",make,0.0037494616
-3,"Aerospace, Defense & Industrials",talked,0.0036445109
-3,"Aerospace, Defense & Industrials",pipeline,0.003631016
-3,"Aerospace, Defense & Industrials",flow,0.0035989925
-3,"Aerospace, Defense & Industrials",acquisition,0.003547756
-3,"Aerospace, Defense & Industrials",around,0.0034677417
-3,"Aerospace, Defense & Industrials",hey,0.0032265827
-3,"Aerospace, Defense & Industrials",way,0.0031484931
-3,"Aerospace, Defense & Industrials",pretty,0.0031268029
-4,Real Estate & REITs,rate,0.0071587884
-4,Real Estate & REITs,portfolio,0.006700648
-4,Real Estate & REITs,asset,0.0065045175
-4,Real Estate & REITs,opportunity,0.006077281
-4,Real Estate & REITs,morning,0.005888592
-4,Real Estate & REITs,capital,0.0056320066
-4,Real Estate & REITs,lease,0.0055800276
-4,Real Estate & REITs,mean,0.0052453703
-4,Real Estate & REITs,property,0.005096863
-4,Real Estate & REITs,sort,0.0046214825
-4,Real Estate & REITs,guidance,0.0045466297
-4,Real Estate & REITs,hey,0.00452392
-4,Real Estate & REITs,seeing,0.004409313
-4,Real Estate & REITs,rent,0.004268525
-4,Real Estate & REITs,guy,0.0041306773
-4,Real Estate & REITs,got,0.0040954375
-4,Real Estate & REITs,occupancy,0.0040764357
-4,Real Estate & REITs,guess,0.0039675995
-4,Real Estate & REITs,gon,0.00376746
-4,Real Estate & REITs,tenant,0.0036726003
-4,Real Estate & REITs,please,0.003564007
-4,Real Estate & REITs,acquisition,0.0034922129
-4,Real Estate & REITs,development,0.003450665
-4,Real Estate & REITs,mentioned,0.0034154144
-4,Real Estate & REITs,obviously,0.0033613527
-4,Real Estate & REITs,cost,0.003316989
-4,Real Estate & REITs,come,0.003226733
-4,Real Estate & REITs,deal,0.003087751
-4,Real Estate & REITs,leasing,0.0030741207
-4,Real Estate & REITs,store,0.0030614291
-5,Financial Services Conference,capital,0.011367507
-5,Financial Services Conference,loan,0.010933352
-5,Financial Services Conference,asset,0.009996597
-5,Financial Services Conference,credit,0.009063237
-5,Financial Services Conference,investment,0.007913939
-5,Financial Services Conference,bank,0.007881154
-5,Financial Services Conference,portfolio,0.006931331
-5,Financial Services Conference,opportunity,0.0061478117
-5,Financial Services Conference,rate,0.005760625
-5,Financial Services Conference,mean,0.0057598837
-5,Financial Services Conference,equity,0.0055532507
-5,Financial Services Conference,private,0.0054291054
-5,Financial Services Conference,got,0.0052360995
-5,Financial Services Conference,fund,0.0049342783
-5,Financial Services Conference,sort,0.0048289006
-5,Financial Services Conference,management,0.004719614
-5,Financial Services Conference,side,0.004667305
-5,Financial Services Conference,fee,0.0046566757
-5,Financial Services Conference,around,0.00455106
-5,Financial Services Conference,client,0.0043146894
-5,Financial Services Conference,deposit,0.004214529
-5,Financial Services Conference,talk,0.0041942378
-5,Financial Services Conference,product,0.004187484
-5,Financial Services Conference,investor,0.0041124276
-5,Financial Services Conference,across,0.0040866397
-5,Financial Services Conference,return,0.0038924303
-5,Financial Services Conference,way,0.0038453124
-5,Financial Services Conference,want,0.0038424218
-5,Financial Services Conference,income,0.0036659914
-5,Financial Services Conference,people,0.003602349
-6,"Mining, Metals & Materials",price,0.015277153
-6,"Mining, Metals & Materials",production,0.0142026115
-6,"Mining, Metals & Materials",cost,0.011181806
-6,"Mining, Metals & Materials",ton,0.009270744
-6,"Mining, Metals & Materials",mine,0.007216946
-6,"Mining, Metals & Materials",cash,0.006936479
-6,"Mining, Metals & Materials",gold,0.0066676703
-6,"Mining, Metals & Materials",project,0.006404845
-6,"Mining, Metals & Materials",mining,0.0052429615
-6,"Mining, Metals & Materials",operation,0.0052280305
-6,"Mining, Metals & Materials",asset,0.004523242
-6,"Mining, Metals & Materials",grade,0.0044754585
-6,"Mining, Metals & Materials",copper,0.0044446345
-6,"Mining, Metals & Materials",plant,0.004444329
-6,"Mining, Metals & Materials",capital,0.0043457947
-6,"Mining, Metals & Materials",guidance,0.0043406393
-6,"Mining, Metals & Materials",around,0.0042853886
-6,"Mining, Metals & Materials",metal,0.0042142733
-6,"Mining, Metals & Materials",mean,0.004158499
-6,"Mining, Metals & Materials",opportunity,0.0038896876
-6,"Mining, Metals & Materials",higher,0.0037683416
-6,"Mining, Metals & Materials",silver,0.0035870124
-6,"Mining, Metals & Materials",flow,0.0034614876
-6,"Mining, Metals & Materials",increase,0.0034467338
-6,"Mining, Metals & Materials",please,0.0034390434
-6,"Mining, Metals & Materials",gon,0.0034382832
-6,"Mining, Metals & Materials",work,0.0034231306
-6,"Mining, Metals & Materials",plan,0.0033643916
-6,"Mining, Metals & Materials",coal,0.0033026598
-6,"Mining, Metals & Materials",ore,0.0032482117
-7,"Oil, Gas & Energy",capital,0.009475199
-7,"Oil, Gas & Energy",cad,0.009176658
-7,"Oil, Gas & Energy",morning,0.008381272
-7,"Oil, Gas & Energy",production,0.005896784
-7,"Oil, Gas & Energy",gas,0.005830499
-7,"Oil, Gas & Energy",basin,0.005572156
-7,"Oil, Gas & Energy",day,0.005269569
-7,"Oil, Gas & Energy",well,0.0051250737
-7,"Oil, Gas & Energy",got,0.0050554345
-7,"Oil, Gas & Energy",price,0.0050419997
-7,"Oil, Gas & Energy",asset,0.004870603
-7,"Oil, Gas & Energy",flow,0.004503602
-7,"Oil, Gas & Energy",cash,0.0044632656
-7,"Oil, Gas & Energy",mean,0.004221132
-7,"Oil, Gas & Energy",opportunity,0.0041283816
-7,"Oil, Gas & Energy",oil,0.0040787016
-7,"Oil, Gas & Energy",return,0.0038536524
-7,"Oil, Gas & Energy",guy,0.0038382441
-7,"Oil, Gas & Energy",across,0.0037982238
-7,"Oil, Gas & Energy",appreciate,0.0037924056
-7,"Oil, Gas & Energy",sort,0.003788899
-7,"Oil, Gas & Energy",volume,0.0037610286
-7,"Oil, Gas & Energy",come,0.0037151547
-7,"Oil, Gas & Energy",pet,0.0036904425
-7,"Oil, Gas & Energy",plan,0.0035106253
-7,"Oil, Gas & Energy",gon,0.0034831867
-7,"Oil, Gas & Energy",activity,0.0034827788
-7,"Oil, Gas & Energy",area,0.0034792703
-7,"Oil, Gas & Energy",cost,0.0034645128
-7,"Oil, Gas & Energy",line,0.0034295667
-8,Industrial Conference (Mixed),client,0.0116663
-8,Industrial Conference (Mixed),customer,0.010070363
-8,Industrial Conference (Mixed),data,0.0077223605
-8,Industrial Conference (Mixed),software,0.0075296424
-8,Industrial Conference (Mixed),product,0.006779207
-8,Industrial Conference (Mixed),service,0.0066991597
-8,Industrial Conference (Mixed),talk,0.00612556
-8,Industrial Conference (Mixed),way,0.0060148668
-8,Industrial Conference (Mixed),sort,0.005677625
-8,Industrial Conference (Mixed),around,0.005436646
-8,Industrial Conference (Mixed),revenue,0.0052315514
-8,Industrial Conference (Mixed),value,0.005106012
-8,Industrial Conference (Mixed),work,0.0049470924
-8,Industrial Conference (Mixed),margin,0.004855633
-8,Industrial Conference (Mixed),talked,0.004831891
-8,Industrial Conference (Mixed),people,0.004696989
-8,Industrial Conference (Mixed),technology,0.004686461
-8,Industrial Conference (Mixed),opportunity,0.0042706733
-8,Industrial Conference (Mixed),want,0.004203097
-8,Industrial Conference (Mixed),got,0.003961758
-8,Industrial Conference (Mixed),different,0.0039577526
-8,Industrial Conference (Mixed),make,0.003946703
-8,Industrial Conference (Mixed),solution,0.003905921
-8,Industrial Conference (Mixed),use,0.0038947742
-8,Industrial Conference (Mixed),across,0.0038674488
-8,Industrial Conference (Mixed),model,0.0038028248
-8,Industrial Conference (Mixed),seeing,0.0037622135
-8,Industrial Conference (Mixed),part,0.0037300726
-8,Industrial Conference (Mixed),still,0.0036309906
-8,Industrial Conference (Mixed),mean,0.0036036577
-9,Transport & Logistics,aircraft,0.010466762
-9,Transport & Logistics,fleet,0.009732209
-9,Transport & Logistics,sir,0.00858535
-9,Transport & Logistics,revenue,0.007941438
-9,Transport & Logistics,cost,0.0074744606
-9,Transport & Logistics,capacity,0.0065647555
-9,Transport & Logistics,airline,0.0063839015
-9,Transport & Logistics,travel,0.0057086637
-9,Transport & Logistics,inr,0.005521418
-9,Transport & Logistics,ship,0.0051305387
-9,Transport & Logistics,vessel,0.0051083122
-9,Transport & Logistics,mean,0.0050114696
-9,Transport & Logistics,please,0.00454878
-9,Transport & Logistics,want,0.0044434574
-9,Transport & Logistics,charter,0.004128033
-9,Transport & Logistics,month,0.0040458734
-9,Transport & Logistics,gon,0.003989802
-9,Transport & Logistics,industry,0.0039182603
-9,Transport & Logistics,seeing,0.0039120163
-9,Transport & Logistics,customer,0.0038851548
-9,Transport & Logistics,member,0.0037096536
-9,Transport & Logistics,got,0.0035078526
-9,Transport & Logistics,way,0.0034892554
-9,Transport & Logistics,increase,0.0034228931
-9,Transport & Logistics,product,0.0033852432
-9,Transport & Logistics,around,0.0033631108
-9,Transport & Logistics,crore,0.003331729
-9,Transport & Logistics,part,0.0031806258
-9,Transport & Logistics,engine,0.0030746243
-9,Transport & Logistics,demand,0.0029123456
-10,Insurance & Specialty Finance,please,0.01732451
-10,Insurance & Specialty Finance,morning,0.012746534
-10,Insurance & Specialty Finance,star,0.009739943
-10,Insurance & Specialty Finance,press,0.009491785
-10,Insurance & Specialty Finance,may,0.008129174
-10,Insurance & Specialty Finance,earnings,0.007406942
-10,Insurance & Specialty Finance,ahead,0.00634771
-10,Insurance & Specialty Finance,ask,0.005348384
-10,Insurance & Specialty Finance,come,0.0047336207
-10,Insurance & Specialty Finance,remark,0.0045093982
-10,Insurance & Specialty Finance,sale,0.004440163
-10,Insurance & Specialty Finance,joining,0.004406818
-10,Insurance & Specialty Finance,net,0.0043977816
-10,Insurance & Specialty Finance,performance,0.004312802
-10,Insurance & Specialty Finance,turn,0.0042988122
-10,Insurance & Specialty Finance,adjusted,0.00426786
-10,Insurance & Specialty Finance,revenue,0.0041938974
-10,Insurance & Specialty Finance,expect,0.004160009
-10,Insurance & Specialty Finance,welcome,0.0040499503
-10,Insurance & Specialty Finance,chief,0.0040344247
-10,Insurance & Specialty Finance,officer,0.004023901
-10,Insurance & Specialty Finance,rate,0.0040230905
-10,Insurance & Specialty Finance,session,0.0038998378
-10,Insurance & Specialty Finance,hey,0.003824482
-10,Insurance & Specialty Finance,presentation,0.0037182139
-10,Insurance & Specialty Finance,increase,0.0036760918
-10,Insurance & Specialty Finance,telephone,0.003658739
-10,Insurance & Specialty Finance,operating,0.0035834361
-10,Insurance & Specialty Finance,cash,0.0035230443
-10,Insurance & Specialty Finance,capital,0.0034821508
-11,Healthcare Conference,patient,0.010132518
-11,Healthcare Conference,product,0.0100849075
-11,Healthcare Conference,revenue,0.009515118
-11,Healthcare Conference,launch,0.0076430347
-11,Healthcare Conference,sort,0.006142279
-11,Healthcare Conference,mean,0.0054479227
-11,Healthcare Conference,guidance,0.005425787
-11,Healthcare Conference,expect,0.004418955
-11,Healthcare Conference,care,0.0043914896
-11,Healthcare Conference,sale,0.004072757
-11,Healthcare Conference,taking,0.0040511126
-11,Healthcare Conference,health,0.0040443377
-11,Healthcare Conference,opportunity,0.003821737
-11,Healthcare Conference,seeing,0.0038181343
-11,Healthcare Conference,clinical,0.0037825892
-11,Healthcare Conference,obviously,0.0036015199
-11,Healthcare Conference,commercial,0.0035587635
-11,Healthcare Conference,got,0.003367331
-11,Healthcare Conference,hospital,0.00335748
-11,Healthcare Conference,around,0.0033267715
-11,Healthcare Conference,volume,0.0031426477
-11,Healthcare Conference,come,0.003095924
-11,Healthcare Conference,impact,0.0030831315
-11,Healthcare Conference,talk,0.003032418
-11,Healthcare Conference,early,0.002970007
-11,Healthcare Conference,across,0.0029570372
-11,Healthcare Conference,seen,0.0029368321
-11,Healthcare Conference,want,0.0028967496
-11,Healthcare Conference,still,0.002745774
-11,Healthcare Conference,give,0.0027283798
-12,Biotechnology & Drug R&D,patient,0.018313635
-12,Biotechnology & Drug R&D,data,0.015564849
-12,Biotechnology & Drug R&D,study,0.013012478
-12,Biotechnology & Drug R&D,phase,0.010900678
-12,Biotechnology & Drug R&D,trial,0.0073887794
-12,Biotechnology & Drug R&D,program,0.0054499083
-12,Biotechnology & Drug R&D,please,0.0046524606
-12,Biotechnology & Drug R&D,taking,0.0043430165
-12,Biotechnology & Drug R&D,disease,0.0043208883
-12,Biotechnology & Drug R&D,dose,0.0042935032
-12,Biotechnology & Drug R&D,drug,0.004158648
-12,Biotechnology & Drug R&D,obviously,0.0040423935
-12,Biotechnology & Drug R&D,come,0.0037461591
-12,Biotechnology & Drug R&D,opportunity,0.0037247688
-12,Biotechnology & Drug R&D,important,0.0037069109
-12,Biotechnology & Drug R&D,need,0.0036258383
-12,Biotechnology & Drug R&D,treatment,0.0035809977
-12,Biotechnology & Drug R&D,expect,0.003510212
-12,Biotechnology & Drug R&D,mean,0.0034929158
-12,Biotechnology & Drug R&D,clinical,0.0034674713
-12,Biotechnology & Drug R&D,therapy,0.003417301
-12,Biotechnology & Drug R&D,development,0.0031881267
-12,Biotechnology & Drug R&D,potential,0.0030941628
-12,Biotechnology & Drug R&D,month,0.0030416164
-12,Biotechnology & Drug R&D,ahead,0.0029930193
-12,Biotechnology & Drug R&D,indication,0.0029783312
-12,Biotechnology & Drug R&D,population,0.0029616815
-12,Biotechnology & Drug R&D,want,0.0029560265
-12,Biotechnology & Drug R&D,fda,0.0029433481
-12,Biotechnology & Drug R&D,sort,0.0026777028
-13,Australian & Pacific Markets,half,0.022529248
-13,Australian & Pacific Markets,sort,0.015253796
-13,Australian & Pacific Markets,aud,0.009650986
-13,Australian & Pacific Markets,around,0.0094346125
-13,Australian & Pacific Markets,cost,0.009278787
-13,Australian & Pacific Markets,got,0.009083027
-13,Australian & Pacific Markets,obviously,0.008433601
-13,Australian & Pacific Markets,please,0.006899979
-13,Australian & Pacific Markets,morning,0.0066512325
-13,Australian & Pacific Markets,mean,0.004734433
-13,Australian & Pacific Markets,ahead,0.0045557707
-13,Australian & Pacific Markets,slide,0.004317162
-13,Australian & Pacific Markets,across,0.004313771
-13,Australian & Pacific Markets,month,0.004237918
-13,Australian & Pacific Markets,guess,0.0041745873
-13,Australian & Pacific Markets,come,0.0040595336
-13,Australian & Pacific Markets,capital,0.0039736624
-13,Australian & Pacific Markets,probably,0.0039057983
-13,Australian & Pacific Markets,performance,0.0038639533
-13,Australian & Pacific Markets,opportunity,0.0038115827
-13,Australian & Pacific Markets,rate,0.0037506605
-13,Australian & Pacific Markets,margin,0.0034095196
-13,Australian & Pacific Markets,still,0.0033215422
-13,Australian & Pacific Markets,give,0.0031111618
-13,Australian & Pacific Markets,part,0.0030712818
-13,Australian & Pacific Markets,moment,0.00305375
-13,Australian & Pacific Markets,australia,0.00297649
-13,Australian & Pacific Markets,work,0.0029231429
-13,Australian & Pacific Markets,guidance,0.0028830816
-13,Australian & Pacific Markets,group,0.0028303328
-14,Energy Infrastructure & Utilities,project,0.015764913
-14,Energy Infrastructure & Utilities,morning,0.008502861
-14,Energy Infrastructure & Utilities,capacity,0.0069445283
-14,Energy Infrastructure & Utilities,contract,0.0058723157
-14,Energy Infrastructure & Utilities,energy,0.005233544
-14,Energy Infrastructure & Utilities,please,0.005048819
-14,Energy Infrastructure & Utilities,opportunity,0.0049785785
-14,Energy Infrastructure & Utilities,capital,0.0048357807
-14,Energy Infrastructure & Utilities,power,0.0047937483
-14,Energy Infrastructure & Utilities,gas,0.0046908855
-14,Energy Infrastructure & Utilities,customer,0.0043347944
-14,Energy Infrastructure & Utilities,ebitda,0.004329885
-14,Energy Infrastructure & Utilities,cash,0.004061574
-14,Energy Infrastructure & Utilities,capex,0.0039809276
-14,Energy Infrastructure & Utilities,demand,0.003959249
-14,Energy Infrastructure & Utilities,mean,0.0038731194
-14,Energy Infrastructure & Utilities,work,0.003793972
-14,Energy Infrastructure & Utilities,need,0.0037881355
-14,Energy Infrastructure & Utilities,around,0.003710485
-14,Energy Infrastructure & Utilities,expect,0.003623505
-14,Energy Infrastructure & Utilities,guidance,0.0035639266
-14,Energy Infrastructure & Utilities,obviously,0.003360335
-14,Energy Infrastructure & Utilities,day,0.0033520022
-14,Energy Infrastructure & Utilities,working,0.0033509017
-14,Energy Infrastructure & Utilities,mentioned,0.0033221496
-14,Energy Infrastructure & Utilities,center,0.0033193193
-14,Energy Infrastructure & Utilities,ahead,0.0033065367
-14,Energy Infrastructure & Utilities,data,0.003196104
-14,Energy Infrastructure & Utilities,may,0.0031481877
-14,Energy Infrastructure & Utilities,let,0.003037685
-15,Nordic Markets (Conf.),eur,0.00827044
-15,Nordic Markets (Conf.),please,0.008109632
-15,Nordic Markets (Conf.),let,0.0077207843
-15,Nordic Markets (Conf.),cost,0.007399354
-15,Nordic Markets (Conf.),course,0.0072664046
-15,Nordic Markets (Conf.),mean,0.007147938
-15,Nordic Markets (Conf.),expect,0.00513704
-15,Nordic Markets (Conf.),presentation,0.0046466407
-15,Nordic Markets (Conf.),still,0.0044526937
-15,Nordic Markets (Conf.),margin,0.0044147605
-15,Nordic Markets (Conf.),already,0.0043905154
-15,Nordic Markets (Conf.),level,0.004389036
-15,Nordic Markets (Conf.),guidance,0.0043862476
-15,Nordic Markets (Conf.),part,0.0042645955
-15,Nordic Markets (Conf.),quite,0.0040879324
-15,Nordic Markets (Conf.),impact,0.003974947
-15,Nordic Markets (Conf.),cash,0.0039636022
-15,Nordic Markets (Conf.),mentioned,0.003935011
-15,Nordic Markets (Conf.),increase,0.0038624553
-15,Nordic Markets (Conf.),group,0.003859876
-15,Nordic Markets (Conf.),come,0.0037977945
-15,Nordic Markets (Conf.),sale,0.0037908324
-15,Nordic Markets (Conf.),give,0.0037551366
-15,Nordic Markets (Conf.),plan,0.0036356258
-15,Nordic Markets (Conf.),revenue,0.003530414
-15,Nordic Markets (Conf.),ahead,0.0034885088
-15,Nordic Markets (Conf.),clear,0.0034572054
-15,Nordic Markets (Conf.),net,0.0034513106
-15,Nordic Markets (Conf.),ask,0.0033510341
-15,Nordic Markets (Conf.),price,0.0033475035
-16,Industrial Manufacturing,margin,0.017380249
-16,Industrial Manufacturing,price,0.009849471
-16,Industrial Manufacturing,volume,0.009657936
-16,Industrial Manufacturing,product,0.009291407
-16,Industrial Manufacturing,cost,0.008769986
-16,Industrial Manufacturing,sale,0.008207791
-16,Industrial Manufacturing,mean,0.0073072114
-16,Industrial Manufacturing,tariff,0.0067479187
-16,Industrial Manufacturing,half,0.006507531
-16,Industrial Manufacturing,pricing,0.0063834516
-16,Industrial Manufacturing,impact,0.006244461
-16,Industrial Manufacturing,morning,0.0061582294
-16,Industrial Manufacturing,order,0.005886734
-16,Industrial Manufacturing,digit,0.0057651545
-16,Industrial Manufacturing,side,0.0055206968
-16,Industrial Manufacturing,expect,0.005511772
-16,Industrial Manufacturing,seeing,0.0054905126
-16,Industrial Manufacturing,america,0.005396131
-16,Industrial Manufacturing,customer,0.005289011
-16,Industrial Manufacturing,still,0.0051278053
-16,Industrial Manufacturing,obviously,0.0047590383
-16,Industrial Manufacturing,inventory,0.0047257906
-16,Industrial Manufacturing,single,0.004422281
-16,Industrial Manufacturing,part,0.004376698
-16,Industrial Manufacturing,mix,0.004331605
-16,Industrial Manufacturing,level,0.004217428
-16,Industrial Manufacturing,seen,0.0041747573
-16,Industrial Manufacturing,china,0.0041058892
-16,Industrial Manufacturing,north,0.0040532476
-16,Industrial Manufacturing,demand,0.00403168
-17,Semiconductors & Electronics,customer,0.01570358
-17,Semiconductors & Electronics,revenue,0.012382154
-17,Semiconductors & Electronics,please,0.008954801
-17,Semiconductors & Electronics,product,0.0083721345
-17,Semiconductors & Electronics,demand,0.0072179097
-17,Semiconductors & Electronics,data,0.007152107
-17,Semiconductors & Electronics,margin,0.006819142
-17,Semiconductors & Electronics,center,0.0056936983
-17,Semiconductors & Electronics,gross,0.005606713
-17,Semiconductors & Electronics,high,0.0053405105
-17,Semiconductors & Electronics,order,0.0044910247
-17,Semiconductors & Electronics,technology,0.004485885
-17,Semiconductors & Electronics,memory,0.0043534148
-17,Semiconductors & Electronics,ask,0.0042062458
-17,Semiconductors & Electronics,supply,0.00378219
-17,Semiconductors & Electronics,capacity,0.0035634434
-17,Semiconductors & Electronics,increase,0.0033739822
-17,Semiconductors & Electronics,may,0.003323977
-17,Semiconductors & Electronics,follow,0.0032992705
-17,Semiconductors & Electronics,expect,0.0032608223
-17,Semiconductors & Electronics,ahead,0.0031529835
-17,Semiconductors & Electronics,application,0.003136704
-17,Semiconductors & Electronics,higher,0.0031341526
-17,Semiconductors & Electronics,based,0.0029512271
-17,Semiconductors & Electronics,half,0.0029508271
-17,Semiconductors & Electronics,seeing,0.0028352544
-17,Semiconductors & Electronics,cost,0.002825588
-17,Semiconductors & Electronics,press,0.0027963386
-17,Semiconductors & Electronics,ramp,0.0026947805
-17,Semiconductors & Electronics,solution,0.0026907856
+0,Real Estate & REITs,portfolio,0.011606001
+0,Real Estate & REITs,asset,0.010410792
+0,Real Estate & REITs,capital,0.008845616
+0,Real Estate & REITs,rate,0.0065028816
+0,Real Estate & REITs,lease,0.006056781
+0,Real Estate & REITs,investment,0.0052379174
+0,Real Estate & REITs,property,0.0048292396
+0,Real Estate & REITs,rent,0.004640778
+0,Real Estate & REITs,occupancy,0.004288551
+0,Real Estate & REITs,deal,0.0040958207
+0,Real Estate & REITs,guidance,0.0039954563
+0,Real Estate & REITs,tenant,0.0039046446
+0,Real Estate & REITs,development,0.003823842
+0,Real Estate & REITs,debt,0.0037148853
+0,Real Estate & REITs,acquisition,0.0035787974
+0,Real Estate & REITs,value,0.003578766
+0,Real Estate & REITs,transaction,0.003444948
+0,Real Estate & REITs,leasing,0.0032426878
+0,Real Estate & REITs,activity,0.003112759
+0,Real Estate & REITs,spread,0.0030997824
+0,Real Estate & REITs,remark,0.0030975472
+0,Real Estate & REITs,space,0.0030366222
+0,Real Estate & REITs,cash,0.0030299253
+0,Real Estate & REITs,income,0.0029986522
+0,Real Estate & REITs,non,0.0029896116
+0,Real Estate & REITs,comment,0.0028423641
+0,Real Estate & REITs,range,0.0027480545
+0,Real Estate & REITs,helpful,0.0026760723
+0,Real Estate & REITs,balance,0.0026352478
+0,Real Estate & REITs,expectation,0.0025754382
+1,General Financial Performance,customer,7.705812e-05
+1,General Financial Performance,product,7.697528e-05
+1,General Financial Performance,cash,7.693775e-05
+1,General Financial Performance,cost,7.6918535e-05
+1,General Financial Performance,revenue,7.681105e-05
+1,General Financial Performance,margin,7.679086e-05
+1,General Financial Performance,guidance,7.678793e-05
+1,General Financial Performance,capital,7.674649e-05
+1,General Financial Performance,sale,7.673915e-05
+1,General Financial Performance,rate,7.6711614e-05
+1,General Financial Performance,month,7.6602606e-05
+1,General Financial Performance,ebitda,7.6592e-05
+1,General Financial Performance,change,7.658344e-05
+1,General Financial Performance,price,7.6565586e-05
+1,General Financial Performance,day,7.654312e-05
+1,General Financial Performance,even,7.652551e-05
+1,General Financial Performance,flow,7.650115e-05
+1,General Financial Performance,asset,7.649973e-05
+1,General Financial Performance,investment,7.648947e-05
+1,General Financial Performance,operating,7.645191e-05
+1,General Financial Performance,additional,7.6450735e-05
+1,General Financial Performance,help,7.644471e-05
+1,General Financial Performance,put,7.6431774e-05
+1,General Financial Performance,saw,7.6428725e-05
+1,General Financial Performance,pricing,7.641964e-05
+1,General Financial Performance,perspective,7.641332e-05
+1,General Financial Performance,move,7.640826e-05
+1,General Financial Performance,within,7.640599e-05
+1,General Financial Performance,view,7.63903e-05
+1,General Financial Performance,technology,7.638597e-05
+2,Shipping & Offshore Drilling,fleet,0.024301508
+2,Shipping & Offshore Drilling,rig,0.017871529
+2,Shipping & Offshore Drilling,vessel,0.0132913
+2,Shipping & Offshore Drilling,contract,0.013211241
+2,Shipping & Offshore Drilling,offshore,0.012021137
+2,Shipping & Offshore Drilling,ship,0.011487542
+2,Shipping & Offshore Drilling,revenue,0.01021139
+2,Shipping & Offshore Drilling,rate,0.009926081
+2,Shipping & Offshore Drilling,day,0.008760479
+2,Shipping & Offshore Drilling,charter,0.007950584
+2,Shipping & Offshore Drilling,cash,0.0077940393
+2,Shipping & Offshore Drilling,tender,0.0071088583
+2,Shipping & Offshore Drilling,nok,0.006689544
+2,Shipping & Offshore Drilling,subsea,0.006536972
+2,Shipping & Offshore Drilling,ebitda,0.0058795693
+2,Shipping & Offshore Drilling,utilization,0.005585026
+2,Shipping & Offshore Drilling,dividend,0.005315276
+2,Shipping & Offshore Drilling,flow,0.0050066025
+2,Shipping & Offshore Drilling,activity,0.0044842823
+2,Shipping & Offshore Drilling,oil,0.0043292264
+2,Shipping & Offshore Drilling,dry,0.0042129387
+2,Shipping & Offshore Drilling,spot,0.004190318
+2,Shipping & Offshore Drilling,cargo,0.004019091
+2,Shipping & Offshore Drilling,board,0.0035040232
+2,Shipping & Offshore Drilling,customer,0.00346728
+2,Shipping & Offshore Drilling,build,0.0034244445
+2,Shipping & Offshore Drilling,sea,0.0032999462
+2,Shipping & Offshore Drilling,eddie,0.0032981017
+2,Shipping & Offshore Drilling,compared,0.0032402542
+2,Shipping & Offshore Drilling,container,0.0032197817
+3,Telecom & Networks,fiber,0.013492931
+3,Telecom & Networks,revenue,0.013382093
+3,Telecom & Networks,network,0.012707129
+3,Telecom & Networks,mobile,0.008663252
+3,Telecom & Networks,customer,0.007985027
+3,Telecom & Networks,cost,0.007640897
+3,Telecom & Networks,cash,0.006899908
+3,Telecom & Networks,arpu,0.006723906
+3,Telecom & Networks,churn,0.0062767095
+3,Telecom & Networks,subscriber,0.006085505
+3,Telecom & Networks,deal,0.00604843
+3,Telecom & Networks,ebitda,0.0056135776
+3,Telecom & Networks,value,0.0052283984
+3,Telecom & Networks,spectrum,0.0049528643
+3,Telecom & Networks,guidance,0.0048392424
+3,Telecom & Networks,flow,0.004838708
+3,Telecom & Networks,digital,0.004828146
+3,Telecom & Networks,capex,0.0043953336
+3,Telecom & Networks,broadband,0.004202384
+3,Telecom & Networks,wireless,0.004124648
+3,Telecom & Networks,strategy,0.003944007
+3,Telecom & Networks,build,0.0037386366
+3,Telecom & Networks,tower,0.0033912857
+3,Telecom & Networks,change,0.0031667533
+3,Telecom & Networks,add,0.003145537
+3,Telecom & Networks,free,0.003128783
+3,Telecom & Networks,capital,0.0029587934
+3,Telecom & Networks,comment,0.0028601214
+3,Telecom & Networks,music,0.0028099474
+3,Telecom & Networks,carrier,0.0028091113
+4,European Industrials,cost,0.010418427
+4,European Industrials,sale,0.008589487
+4,European Industrials,margin,0.0073764003
+4,European Industrials,price,0.0068424074
+4,European Industrials,revenue,0.006189891
+4,European Industrials,guidance,0.005311787
+4,European Industrials,key,0.00526884
+4,European Industrials,eur,0.0052206824
+4,European Industrials,ebitda,0.0046718507
+4,European Industrials,compared,0.004558927
+4,European Industrials,hand,0.0045551206
+4,European Industrials,regarding,0.0045108646
+4,European Industrials,related,0.004259577
+4,European Industrials,group,0.004070999
+4,European Industrials,increased,0.0038260752
+4,European Industrials,project,0.0036478534
+4,European Industrials,profitability,0.003573027
+4,European Industrials,operating,0.0034830822
+4,European Industrials,customer,0.003461073
+4,European Industrials,segment,0.0034083694
+4,European Industrials,effect,0.0033522516
+4,European Industrials,ceo,0.0032386696
+4,European Industrials,development,0.0031604646
+4,European Industrials,cash,0.0031572971
+4,European Industrials,hello,0.0031178994
+4,European Industrials,strategy,0.003098285
+4,European Industrials,due,0.0030703591
+4,European Industrials,investment,0.003046295
+4,European Industrials,comment,0.0030432937
+4,European Industrials,acquisition,0.0030169105
+5,"Oil, Gas & Energy Production",production,0.011944213
+5,"Oil, Gas & Energy Production",cash,0.009106239
+5,"Oil, Gas & Energy Production",capital,0.00865853
+5,"Oil, Gas & Energy Production",price,0.008356232
+5,"Oil, Gas & Energy Production",gas,0.008026302
+5,"Oil, Gas & Energy Production",project,0.007750404
+5,"Oil, Gas & Energy Production",cost,0.006560039
+5,"Oil, Gas & Energy Production",flow,0.0061839176
+5,"Oil, Gas & Energy Production",asset,0.005985587
+5,"Oil, Gas & Energy Production",day,0.0055354177
+5,"Oil, Gas & Energy Production",oil,0.0053012944
+5,"Oil, Gas & Energy Production",ton,0.0046969857
+5,"Oil, Gas & Energy Production",volume,0.0046146745
+5,"Oil, Gas & Energy Production",mine,0.004523205
+5,"Oil, Gas & Energy Production",operation,0.004375697
+5,"Oil, Gas & Energy Production",guidance,0.004302835
+5,"Oil, Gas & Energy Production",cad,0.00421848
+5,"Oil, Gas & Energy Production",capex,0.0037448332
+5,"Oil, Gas & Energy Production",free,0.0035685282
+5,"Oil, Gas & Energy Production",basin,0.0032113672
+5,"Oil, Gas & Energy Production",return,0.0031544848
+5,"Oil, Gas & Energy Production",capacity,0.0030906938
+5,"Oil, Gas & Energy Production",development,0.0030298284
+5,"Oil, Gas & Energy Production",wanted,0.0029868423
+5,"Oil, Gas & Energy Production",resource,0.0029033497
+5,"Oil, Gas & Energy Production",well,0.00289431
+5,"Oil, Gas & Energy Production",gold,0.002885321
+5,"Oil, Gas & Energy Production",grade,0.00281462
+5,"Oil, Gas & Energy Production",drilling,0.0027366597
+5,"Oil, Gas & Energy Production",barrel,0.0027299707
+6,Software & Enterprise Tech,customer,0.021455446
+6,Software & Enterprise Tech,revenue,0.014206873
+6,Software & Enterprise Tech,product,0.009497562
+6,Software & Enterprise Tech,margin,0.0080738375
+6,Software & Enterprise Tech,solution,0.004523514
+6,Software & Enterprise Tech,platform,0.0044521727
+6,Software & Enterprise Tech,technology,0.0041738623
+6,Software & Enterprise Tech,software,0.0037779037
+6,Software & Enterprise Tech,guidance,0.0034743901
+6,Software & Enterprise Tech,gross,0.003443851
+6,Software & Enterprise Tech,enterprise,0.003385293
+6,Software & Enterprise Tech,cash,0.0031550648
+6,Software & Enterprise Tech,model,0.0031189697
+6,Software & Enterprise Tech,system,0.0029851792
+6,Software & Enterprise Tech,deal,0.0028827423
+6,Software & Enterprise Tech,sale,0.0028486678
+6,Software & Enterprise Tech,rate,0.002833888
+6,Software & Enterprise Tech,capability,0.0027846054
+6,Software & Enterprise Tech,help,0.0026530216
+6,Software & Enterprise Tech,large,0.0025428967
+6,Software & Enterprise Tech,flow,0.0024768456
+6,Software & Enterprise Tech,area,0.0024409443
+6,Software & Enterprise Tech,wanted,0.0024103918
+6,Software & Enterprise Tech,guide,0.002395849
+6,Software & Enterprise Tech,helpful,0.0023830305
+6,Software & Enterprise Tech,cloud,0.002376719
+6,Software & Enterprise Tech,value,0.002293227
+6,Software & Enterprise Tech,defense,0.0022907692
+6,Software & Enterprise Tech,add,0.0022722485
+6,Software & Enterprise Tech,change,0.0022576076
+7,Healthcare Services,revenue,0.0128126405
+7,Healthcare Services,guidance,0.0071442933
+7,Healthcare Services,margin,0.0059689647
+7,Healthcare Services,rate,0.004885899
+7,Healthcare Services,cost,0.00472806
+7,Healthcare Services,volume,0.0042602336
+7,Healthcare Services,care,0.0041474965
+7,Healthcare Services,sale,0.004041667
+7,Healthcare Services,comment,0.003811443
+7,Healthcare Services,health,0.0037237045
+7,Healthcare Services,remark,0.003661347
+7,Healthcare Services,cash,0.0032884732
+7,Healthcare Services,helpful,0.0032375185
+7,Healthcare Services,product,0.0032195777
+7,Healthcare Services,change,0.003192632
+7,Healthcare Services,ebitda,0.0031132165
+7,Healthcare Services,day,0.0031083138
+7,Healthcare Services,expectation,0.0029615597
+7,Healthcare Services,continued,0.0028038837
+7,Healthcare Services,focus,0.0027698104
+7,Healthcare Services,total,0.0025808474
+7,Healthcare Services,early,0.0025784434
+7,Healthcare Services,wanted,0.002572736
+7,Healthcare Services,range,0.0025624323
+7,Healthcare Services,help,0.0025578884
+7,Healthcare Services,trend,0.0025115209
+7,Healthcare Services,color,0.0025070251
+7,Healthcare Services,anything,0.0024691224
+7,Healthcare Services,significant,0.0024413308
+7,Healthcare Services,additional,0.0024296467
+8,Asian & International Markets,revenue,0.013888602
+8,Asian & International Markets,profit,0.008653704
+8,Asian & International Markets,month,0.008273574
+8,Asian & International Markets,security,0.007869075
+8,Asian & International Markets,inr,0.007863463
+8,Asian & International Markets,san,0.007560125
+8,Asian & International Markets,product,0.0068786736
+8,Asian & International Markets,jpy,0.006278836
+8,Asian & International Markets,ett,0.0059511443
+8,Asian & International Markets,margin,0.0058036568
+8,Asian & International Markets,sale,0.0051001008
+8,Asian & International Markets,language,0.0050082337
+8,Asian & International Markets,foreign,0.0048263045
+8,Asian & International Markets,cost,0.004755358
+8,Asian & International Markets,crore,0.004724178
+8,Asian & International Markets,hear,0.004703152
+8,Asian & International Markets,unmute,0.0042946828
+8,Asian & International Markets,customer,0.004271347
+8,Asian & International Markets,nine,0.0040191384
+8,Asian & International Markets,change,0.0039626807
+8,Asian & International Markets,project,0.0039564585
+8,Asian & International Markets,price,0.0039236727
+8,Asian & International Markets,due,0.00390953
+8,Asian & International Markets,profitability,0.003753589
+8,Asian & International Markets,regarding,0.0034496537
+8,Asian & International Markets,expense,0.0034149599
+8,Asian & International Markets,increased,0.0033858167
+8,Asian & International Markets,japan,0.003294955
+8,Asian & International Markets,cable,0.003230733
+8,Asian & International Markets,forecast,0.0031925961
+9,Insurance & Reinsurance,insurance,0.01437197
+9,Insurance & Reinsurance,loss,0.012439213
+9,Insurance & Reinsurance,ratio,0.011351798
+9,Insurance & Reinsurance,premium,0.00900732
+9,Insurance & Reinsurance,capital,0.006996042
+9,Insurance & Reinsurance,rate,0.0068530017
+9,Insurance & Reinsurance,claim,0.0068175537
+9,Insurance & Reinsurance,line,0.0066466434
+9,Insurance & Reinsurance,pricing,0.005626594
+9,Insurance & Reinsurance,book,0.0053031035
+9,Insurance & Reinsurance,investment,0.005078262
+9,Insurance & Reinsurance,property,0.004786279
+9,Insurance & Reinsurance,underwriting,0.0046173474
+9,Insurance & Reinsurance,commercial,0.004529382
+9,Insurance & Reinsurance,reinsurance,0.0043723327
+9,Insurance & Reinsurance,reserve,0.004355701
+9,Insurance & Reinsurance,trend,0.003968232
+9,Insurance & Reinsurance,benefit,0.003926124
+9,Insurance & Reinsurance,agent,0.0038927847
+9,Insurance & Reinsurance,retirement,0.0038804559
+9,Insurance & Reinsurance,industry,0.003869572
+9,Insurance & Reinsurance,portfolio,0.0038231188
+9,Insurance & Reinsurance,life,0.0037926338
+9,Insurance & Reinsurance,carrier,0.0037398774
+9,Insurance & Reinsurance,policy,0.003679078
+9,Insurance & Reinsurance,income,0.0036488902
+9,Insurance & Reinsurance,mike,0.003637706
+9,Insurance & Reinsurance,target,0.0035546988
+9,Insurance & Reinsurance,return,0.0035275249
+9,Insurance & Reinsurance,large,0.0034809392
+10,Biotechnology & Drug R&D,patient,0.022513554
+10,Biotechnology & Drug R&D,study,0.0122843515
+10,Biotechnology & Drug R&D,phase,0.010062382
+10,Biotechnology & Drug R&D,trial,0.007879551
+10,Biotechnology & Drug R&D,clinical,0.005125388
+10,Biotechnology & Drug R&D,launch,0.004900273
+10,Biotechnology & Drug R&D,disease,0.0048739994
+10,Biotechnology & Drug R&D,drug,0.004804117
+10,Biotechnology & Drug R&D,therapy,0.004500242
+10,Biotechnology & Drug R&D,product,0.0041856407
+10,Biotechnology & Drug R&D,treatment,0.004031569
+10,Biotechnology & Drug R&D,fda,0.003949737
+10,Biotechnology & Drug R&D,dose,0.003902566
+10,Biotechnology & Drug R&D,potential,0.0036019702
+10,Biotechnology & Drug R&D,development,0.0034391168
+10,Biotechnology & Drug R&D,commercial,0.0034234512
+10,Biotechnology & Drug R&D,month,0.003408191
+10,Biotechnology & Drug R&D,indication,0.0033665402
+10,Biotechnology & Drug R&D,population,0.0030633402
+10,Biotechnology & Drug R&D,approval,0.0029379283
+10,Biotechnology & Drug R&D,update,0.002889783
+10,Biotechnology & Drug R&D,early,0.0028818867
+10,Biotechnology & Drug R&D,cancer,0.0028348232
+10,Biotechnology & Drug R&D,progress,0.0026648084
+10,Biotechnology & Drug R&D,pipeline,0.002491885
+10,Biotechnology & Drug R&D,even,0.0024284273
+10,Biotechnology & Drug R&D,thinking,0.0023442553
+10,Biotechnology & Drug R&D,comment,0.002309984
+10,Biotechnology & Drug R&D,physician,0.0022816458
+10,Biotechnology & Drug R&D,response,0.0022297748
+11,Banking & Credit,client,0.010596948
+11,Banking & Credit,capital,0.010200472
+11,Banking & Credit,loan,0.009819545
+11,Banking & Credit,bank,0.009609821
+11,Banking & Credit,credit,0.0082083475
+11,Banking & Credit,rate,0.0075648534
+11,Banking & Credit,investment,0.0056378986
+11,Banking & Credit,asset,0.005599813
+11,Banking & Credit,product,0.0050384565
+11,Banking & Credit,fee,0.004715158
+11,Banking & Credit,deposit,0.004445409
+11,Banking & Credit,management,0.004298655
+11,Banking & Credit,income,0.004095487
+11,Banking & Credit,cost,0.0040583885
+11,Banking & Credit,private,0.0040532593
+11,Banking & Credit,portfolio,0.0039046467
+11,Banking & Credit,interest,0.003830674
+11,Banking & Credit,balance,0.0038121296
+11,Banking & Credit,return,0.0037768984
+11,Banking & Credit,customer,0.0037333383
+11,Banking & Credit,equity,0.0036208644
+11,Banking & Credit,target,0.0031598902
+11,Banking & Credit,point,0.003156757
+11,Banking & Credit,fund,0.003151908
+11,Banking & Credit,revenue,0.003119809
+11,Banking & Credit,strategy,0.003092209
+11,Banking & Credit,banking,0.0030780982
+11,Banking & Credit,expense,0.003037237
+11,Banking & Credit,platform,0.0029887317
+11,Banking & Credit,day,0.0029767628
+12,Consumer Tech & Marketing,revenue,0.01083936
+12,Consumer Tech & Marketing,platform,0.008805091
+12,Consumer Tech & Marketing,customer,0.007357443
+12,Consumer Tech & Marketing,product,0.0065905997
+12,Consumer Tech & Marketing,marketing,0.006390946
+12,Consumer Tech & Marketing,experience,0.005989282
+12,Consumer Tech & Marketing,brand,0.005288999
+12,Consumer Tech & Marketing,consumer,0.0050331806
+12,Consumer Tech & Marketing,model,0.004612023
+12,Consumer Tech & Marketing,agent,0.004051454
+12,Consumer Tech & Marketing,value,0.0038258322
+12,Consumer Tech & Marketing,user,0.003819561
+12,Consumer Tech & Marketing,partner,0.0035986057
+12,Consumer Tech & Marketing,traffic,0.003591987
+12,Consumer Tech & Marketing,advertising,0.003248878
+12,Consumer Tech & Marketing,strategy,0.003033247
+12,Consumer Tech & Marketing,spend,0.0029831028
+12,Consumer Tech & Marketing,content,0.0029798462
+12,Consumer Tech & Marketing,change,0.0027856107
+12,Consumer Tech & Marketing,member,0.0027758596
+12,Consumer Tech & Marketing,margin,0.0027636157
+12,Consumer Tech & Marketing,growing,0.0027456249
+12,Consumer Tech & Marketing,game,0.0027419617
+12,Consumer Tech & Marketing,investment,0.0027199402
+12,Consumer Tech & Marketing,international,0.0027000706
+12,Consumer Tech & Marketing,many,0.0026765869
+12,Consumer Tech & Marketing,industry,0.0026640892
+12,Consumer Tech & Marketing,search,0.0026592342
+12,Consumer Tech & Marketing,getting,0.0026122697
+12,Consumer Tech & Marketing,world,0.002553194
+13,Infrastructure & Capital Projects,project,0.008454937
+13,Infrastructure & Capital Projects,customer,0.006286538
+13,Infrastructure & Capital Projects,capital,0.0059573557
+13,Infrastructure & Capital Projects,asset,0.00445401
+13,Infrastructure & Capital Projects,contract,0.0040263776
+13,Infrastructure & Capital Projects,investment,0.003955002
+13,Infrastructure & Capital Projects,rate,0.0036184941
+13,Infrastructure & Capital Projects,day,0.0032891862
+13,Infrastructure & Capital Projects,pipeline,0.0032209053
+13,Infrastructure & Capital Projects,capacity,0.0030358366
+13,Infrastructure & Capital Projects,month,0.0029503866
+13,Infrastructure & Capital Projects,large,0.0029234071
+13,Infrastructure & Capital Projects,put,0.0028943755
+13,Infrastructure & Capital Projects,infrastructure,0.0028756368
+13,Infrastructure & Capital Projects,margin,0.0028173155
+13,Infrastructure & Capital Projects,energy,0.0028137106
+13,Infrastructure & Capital Projects,build,0.0027828696
+13,Infrastructure & Capital Projects,space,0.0027603337
+13,Infrastructure & Capital Projects,revenue,0.0026622938
+13,Infrastructure & Capital Projects,state,0.0025914784
+13,Infrastructure & Capital Projects,process,0.0025792443
+13,Infrastructure & Capital Projects,backlog,0.002566105
+13,Infrastructure & Capital Projects,always,0.0025441656
+13,Infrastructure & Capital Projects,acquisition,0.002387359
+13,Infrastructure & Capital Projects,getting,0.00237364
+13,Infrastructure & Capital Projects,area,0.0023480225
+13,Infrastructure & Capital Projects,even,0.0023102367
+13,Infrastructure & Capital Projects,focus,0.0022902028
+13,Infrastructure & Capital Projects,world,0.0022509596
+13,Infrastructure & Capital Projects,thinking,0.0022499075
+14,Automotive & Industrial Tech,customer,0.01773829
+14,Automotive & Industrial Tech,technology,0.012047728
+14,Automotive & Industrial Tech,product,0.0095071485
+14,Automotive & Industrial Tech,system,0.008360833
+14,Automotive & Industrial Tech,cost,0.007639186
+14,Automotive & Industrial Tech,industry,0.006942171
+14,Automotive & Industrial Tech,cycle,0.0056471126
+14,Automotive & Industrial Tech,price,0.0055203065
+14,Automotive & Industrial Tech,vehicle,0.0054227496
+14,Automotive & Industrial Tech,car,0.0052623157
+14,Automotive & Industrial Tech,software,0.005073834
+14,Automotive & Industrial Tech,solution,0.0048413295
+14,Automotive & Industrial Tech,application,0.004395771
+14,Automotive & Industrial Tech,even,0.004375946
+14,Automotive & Industrial Tech,getting,0.004203267
+14,Automotive & Industrial Tech,automation,0.0041101784
+14,Automotive & Industrial Tech,talking,0.004020763
+14,Automotive & Industrial Tech,pricing,0.0039954516
+14,Automotive & Industrial Tech,industrial,0.0039639547
+14,Automotive & Industrial Tech,truck,0.0038889921
+14,Automotive & Industrial Tech,change,0.0037873536
+14,Automotive & Industrial Tech,margin,0.0037035411
+14,Automotive & Industrial Tech,chain,0.0035114624
+14,Automotive & Industrial Tech,space,0.003483312
+14,Automotive & Industrial Tech,chip,0.0034305213
+14,Automotive & Industrial Tech,help,0.0032682212
+14,Automotive & Industrial Tech,within,0.0032305215
+14,Automotive & Industrial Tech,buy,0.0032225805
+14,Automotive & Industrial Tech,hard,0.0032075522
+14,Automotive & Industrial Tech,audience,0.0031854697
+15,Australian Markets,aud,0.025144842
+15,Australian Markets,cost,0.016953021
+15,Australian Markets,australia,0.008109423
+15,Australian Markets,month,0.007917045
+15,Australian Markets,group,0.00623989
+15,Australian Markets,moment,0.0061972085
+15,Australian Markets,margin,0.0055114618
+15,Australian Markets,capital,0.0051348363
+15,Australian Markets,rate,0.0050873626
+15,Australian Markets,store,0.005042016
+15,Australian Markets,underlying,0.004940864
+15,Australian Markets,guidance,0.004584963
+15,Australian Markets,key,0.0043272097
+15,Australian Markets,debt,0.004067738
+15,Australian Markets,andrew,0.004036903
+15,Australian Markets,site,0.00401779
+15,Australian Markets,particularly,0.0039961315
+15,Australian Markets,richard,0.003967561
+15,Australian Markets,sorry,0.0039652507
+15,Australian Markets,yep,0.0039617936
+15,Australian Markets,firstly,0.0039201085
+15,Australian Markets,zealand,0.003753231
+15,Australian Markets,trading,0.003714744
+15,Australian Markets,benefit,0.0036136038
+15,Australian Markets,comment,0.0035641156
+15,Australian Markets,australian,0.0035065336
+15,Australian Markets,within,0.003301976
+15,Australian Markets,hand,0.0032875605
+15,Australian Markets,david,0.003237529
+15,Australian Markets,change,0.0031240322
+16,Consumer Products & Pricing,margin,0.012452593
+16,Consumer Products & Pricing,product,0.00730927
+16,Consumer Products & Pricing,sale,0.0069318274
+16,Consumer Products & Pricing,customer,0.006930263
+16,Consumer Products & Pricing,price,0.0058486103
+16,Consumer Products & Pricing,cost,0.0055472315
+16,Consumer Products & Pricing,volume,0.004932902
+16,Consumer Products & Pricing,digit,0.00479574
+16,Consumer Products & Pricing,brand,0.0044239974
+16,Consumer Products & Pricing,pricing,0.0043357546
+16,Consumer Products & Pricing,single,0.0036825966
+16,Consumer Products & Pricing,revenue,0.0034678364
+16,Consumer Products & Pricing,tariff,0.0034388728
+16,Consumer Products & Pricing,segment,0.0034277316
+16,Consumer Products & Pricing,point,0.0032173865
+16,Consumer Products & Pricing,saw,0.0031642118
+16,Consumer Products & Pricing,gross,0.0031453276
+16,Consumer Products & Pricing,category,0.0031056097
+16,Consumer Products & Pricing,improvement,0.00300515
+16,Consumer Products & Pricing,change,0.0029124033
+16,Consumer Products & Pricing,guidance,0.0029095407
+16,Consumer Products & Pricing,portfolio,0.0028789146
+16,Consumer Products & Pricing,mid,0.0028573843
+16,Consumer Products & Pricing,day,0.0028423632
+16,Consumer Products & Pricing,rate,0.0028396193
+16,Consumer Products & Pricing,overall,0.0028241382
+16,Consumer Products & Pricing,consumer,0.0027851237
+16,Consumer Products & Pricing,america,0.0027815881
+16,Consumer Products & Pricing,inventory,0.0026679593
+16,Consumer Products & Pricing,organic,0.0026095407
+17,"Aerospace, Defense & Space",space,0.0070650373
+17,"Aerospace, Defense & Space",satellite,0.0070242174
+17,"Aerospace, Defense & Space",production,0.006180066
+17,"Aerospace, Defense & Space",process,0.0052517415
+17,"Aerospace, Defense & Space",launch,0.0050929687
+17,"Aerospace, Defense & Space",government,0.0048271525
+17,"Aerospace, Defense & Space",value,0.0046305386
+17,"Aerospace, Defense & Space",cell,0.0045223576
+17,"Aerospace, Defense & Space",simon,0.0043492364
+17,"Aerospace, Defense & Space",agreement,0.004343887
+17,"Aerospace, Defense & Space",capital,0.0040213354
+17,"Aerospace, Defense & Space",regal,0.0037915155
+17,"Aerospace, Defense & Space",cost,0.0037799904
+17,"Aerospace, Defense & Space",place,0.0037490022
+17,"Aerospace, Defense & Space",development,0.0036957865
+17,"Aerospace, Defense & Space",potential,0.0035962507
+17,"Aerospace, Defense & Space",licensing,0.003577433
+17,"Aerospace, Defense & Space",month,0.003452408
+17,"Aerospace, Defense & Space",manufacturing,0.0033668082
+17,"Aerospace, Defense & Space",capability,0.0033071574
+17,"Aerospace, Defense & Space",yep,0.0032486618
+17,"Aerospace, Defense & Space",progress,0.0032159444
+17,"Aerospace, Defense & Space",plant,0.0031847677
+17,"Aerospace, Defense & Space",battery,0.0031590324
+17,"Aerospace, Defense & Space",capacity,0.0030733694
+17,"Aerospace, Defense & Space",mark,0.0030539816
+17,"Aerospace, Defense & Space",molecule,0.0030217334
+17,"Aerospace, Defense & Space",flight,0.0029666075
+17,"Aerospace, Defense & Space",cash,0.0029401984
+17,"Aerospace, Defense & Space",area,0.00293821
+18,European Energy & Materials,cost,0.0096474495
+18,European Energy & Materials,price,0.007487682
+18,European Energy & Materials,margin,0.007359384
+18,European Energy & Materials,eur,0.007004136
+18,European Energy & Materials,cash,0.006632166
+18,European Energy & Materials,volume,0.0063917167
+18,European Energy & Materials,europe,0.0060960236
+18,European Energy & Materials,capacity,0.0054746587
+18,European Energy & Materials,guidance,0.0051179808
+18,European Energy & Materials,capex,0.003765787
+18,European Energy & Materials,flow,0.0037109444
+18,European Energy & Materials,project,0.0036069779
+18,European Energy & Materials,china,0.003570688
+18,European Energy & Materials,capital,0.00356955
+18,European Energy & Materials,product,0.0033001665
+18,European Energy & Materials,ebitda,0.0031714474
+18,European Energy & Materials,even,0.0030670108
+18,European Energy & Materials,customer,0.0030231623
+18,European Energy & Materials,america,0.0030105498
+18,European Energy & Materials,change,0.0029984394
+18,European Energy & Materials,basically,0.0028554387
+18,European Energy & Materials,contract,0.0027611835
+18,European Energy & Materials,always,0.0027522433
+18,European Energy & Materials,improvement,0.0026896077
+18,European Energy & Materials,comment,0.0026517536
+18,European Energy & Materials,less,0.0026472025
+18,European Energy & Materials,plant,0.0025843694
+18,European Energy & Materials,pricing,0.0025836152
+18,European Energy & Materials,industry,0.0025673471
+18,European Energy & Materials,sale,0.002557629
+19,Education & Niche Sectors,eur,0.017930152
+19,Education & Niche Sectors,student,0.0125266975
+19,Education & Niche Sectors,investment,0.009431594
+19,Education & Niche Sectors,campus,0.009374766
+19,Education & Niche Sectors,antonio,0.008905852
+19,Education & Niche Sectors,education,0.008416109
+19,Education & Niche Sectors,enrollment,0.0073342123
+19,Education & Niche Sectors,school,0.0068464093
+19,Education & Niche Sectors,racing,0.005520261
+19,Education & Niche Sectors,jos,0.005415743
+19,Education & Niche Sectors,program,0.005393621
+19,Education & Niche Sectors,learning,0.0053326925
+19,Education & Niche Sectors,expansion,0.0050297687
+19,Education & Niche Sectors,margin,0.0048551434
+19,Education & Niche Sectors,juan,0.004748547
+19,Education & Niche Sectors,product,0.004732045
+19,Education & Niche Sectors,javier,0.004677222
+19,Education & Niche Sectors,space,0.004620986
+19,Education & Niche Sectors,marketing,0.004480715
+19,Education & Niche Sectors,sport,0.0042986777
+19,Education & Niche Sectors,av,0.004186243
+19,Education & Niche Sectors,ebitda,0.0040112846
+19,Education & Niche Sectors,luca,0.0038255274
+19,Education & Niche Sectors,overall,0.0037699952
+19,Education & Niche Sectors,cash,0.003723723
+19,Education & Niche Sectors,revenue,0.0037009171
+19,Education & Niche Sectors,rotation,0.0036425395
+19,Education & Niche Sectors,rider,0.0036160003
+19,Education & Niche Sectors,san,0.0035950793
+19,Education & Niche Sectors,scale,0.003553959
