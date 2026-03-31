@@ -1,0 +1,16 @@
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# R session data
+.Rdata
+.Rhistory
+
+# Large raw corpus files (not tracked — run 00_prepare_corpus.R to regenerate)
+data/corpus_documents.csv
+data/corpus_speaker_level.csv
+
+# OS
+.DS_Store

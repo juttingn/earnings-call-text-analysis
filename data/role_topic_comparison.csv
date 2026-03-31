@@ -1,0 +1,37 @@
+role,topic,topic_id,proportion
+executive,Digital Media & Advertising,0,0.10980427
+executive,Investor Conference (General),1,0.06090234
+executive,Nordic / European Small Caps,2,0.009881615
+executive,"Aerospace, Defense & Industrials",3,0.056829635
+executive,Real Estate & REITs,4,0.066076845
+executive,Financial Services Conference,5,0.065871015
+executive,"Mining, Metals & Materials",6,0.024976315
+executive,"Oil, Gas & Energy",7,0.016877595
+executive,Industrial Conference (Mixed),8,0.07338351
+executive,Transport & Logistics,9,0.012422286
+executive,Insurance & Specialty Finance,10,0.08997926
+executive,Healthcare Conference,11,0.040880974
+executive,Biotechnology & Drug R&D,12,0.03664515
+executive,Australian & Pacific Markets,13,0.0423239
+executive,Energy Infrastructure & Utilities,14,0.06316656
+executive,Nordic Markets (Conf.),15,0.10296349
+executive,Industrial Manufacturing,16,0.08846526
+executive,Semiconductors & Electronics,17,0.038549993
+analyst,Digital Media & Advertising,0,0.14210176
+analyst,Investor Conference (General),1,0.023726266
+analyst,Nordic / European Small Caps,2,0.010633831
+analyst,"Aerospace, Defense & Industrials",3,0.09915417
+analyst,Real Estate & REITs,4,0.099743545
+analyst,Financial Services Conference,5,0.05024013
+analyst,"Mining, Metals & Materials",6,0.017182143
+analyst,"Oil, Gas & Energy",7,0.03361529
+analyst,Industrial Conference (Mixed),8,0.017202629
+analyst,Transport & Logistics,9,0.0067746565
+analyst,Insurance & Specialty Finance,10,0.030109024
+analyst,Healthcare Conference,11,0.041790668
+analyst,Biotechnology & Drug R&D,12,0.04269863
+analyst,Australian & Pacific Markets,13,0.06926081
+analyst,Energy Infrastructure & Utilities,14,0.06485786
+analyst,Nordic Markets (Conf.),15,0.063160956
+analyst,Industrial Manufacturing,16,0.15439337
+analyst,Semiconductors & Electronics,17,0.03335424
