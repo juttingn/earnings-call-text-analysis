@@ -26,24 +26,22 @@ can now apply more sophisticated methods to the same underlying material.
 
 The analysis unfolds in two parts:
 
-1. **Broad topic exploration** (this repository, Part 1): apply unsupervised
-   topic modeling (LDA) to the full corpus to map the latent topical structure
-   of earnings call discourse, understand which sectors dominate, how topics
-   are distributed across the Q4 2025 reporting season, and whether executive
+1. **Broad topic exploration** (Part 1): apply unsupervised topic modeling
+   (LDA) to the full corpus to map the latent topical structure of earnings
+   call discourse, understand which sectors dominate, how topics are
+   distributed across the Q4 2025 reporting season, and whether executive
    speech and analyst questions reflect distinct topical priorities.
 
-2. **Geoeconomic risk deep-dive** (Part 2, forthcoming): zoom in on the topics
-   and documents most associated with geoeconomic language — trade policy,
-   supply chain disruption, geopolitical uncertainty, sanctions exposure — and
-   track how the salience of these themes has evolved across companies and
-   quarters. This will extend the Master Thesis analysis to a richer linguistic
-   and temporal window than was previously available.
+2. **Geoeconomic risk deep-dive** (Part 2): zoom in on the documents most
+   associated with geoeconomic language — trade policy, sanctions, embargoes,
+   geopolitical uncertainty — and use a large language model to classify the
+   context in which that risk is discussed at the firm level. This extends the
+   Master Thesis analysis to a richer linguistic window, moving beyond keyword
+   counts to structured inference about firm-level risk exposure and response.
 
 ---
 
 ## Pipeline
-
-The analysis uses a combined **R + Python** workflow:
 
 ```
 00_prepare_corpus.R          (R)
@@ -59,7 +57,17 @@ The analysis uses a combined **R + Python** workflow:
         ↓
 02_visualize_topics.R        (R / ggplot2)
         ↓
-   figures/  (PNG outputs)
+   figures/00–09  (PNG outputs)
+        ↓
+03_geoeconomic_search.ipynb  (Python / regex)
+        ↓
+   data/geoeconomic_matches.csv
+   data/geoeconomic_matches_flagged.csv
+   figures/10–13  (PNG outputs)
+        ↓
+04_llm_context_analysis.py   (Python / Claude API)
+        ↓
+   data/geoeconomic_context.json
 ```
 
 ---
@@ -86,14 +94,15 @@ investor-relations, operator), and aggregates text at the transcript level.
 
 ### `01_topic_modeling.ipynb`
 
-The main analysis notebook. Preprocesses the corpus (tokenization, custom
-earnings-call stopword removal, lemmatization), fits an LDA model using
-[gensim](https://radimrehurek.com/gensim/), selects the optimal number of
-topics via coherence scoring, and compares the topic footprints of executive
-and analyst speech.
+The main topic-modeling notebook. Preprocesses the corpus (tokenization,
+custom earnings-call stopword removal, lemmatization), fits an LDA model
+using [gensim](https://radimrehurek.com/gensim/), selects the optimal number
+of topics via coherence scoring, and compares the topic footprints of
+executive and analyst speech.
 
 **Requires:** the `.venv` Python 3.10 environment from the scraper project
-(or any environment with `gensim`, `nltk`, `pandas`, `matplotlib`, `scikit-learn`).
+(or any environment with `gensim`, `nltk`, `pandas`, `matplotlib`,
+`scikit-learn`).
 
 **Outputs:**
 - `data/doc_topic_distributions.csv` — γ matrix: per-document topic proportions
@@ -104,11 +113,6 @@ and analyst speech.
 ```bash
 source /path/to/.venv/bin/activate
 jupyter lab 01_topic_modeling.ipynb
-```
-
-Or execute non-interactively:
-```bash
-jupyter nbconvert --to notebook --execute --inplace 01_topic_modeling.ipynb
 ```
 
 ---
@@ -129,6 +133,79 @@ the corpus is dominated by the Q4 2025 earnings season.
 
 ---
 
+### `03_geoeconomic_search.ipynb`
+
+Dictionary-based keyword search across all 2,907 transcripts. Flags documents
+that contain a co-occurrence of at least one topic keyword and one
+risk/uncertainty keyword from four geoeconomic risk categories:
+
+| Category | Logic |
+|---|---|
+| **Trade risk** | (trade-policy term AND risk/uncertainty term) OR (trade-flow term AND trade-restriction term) |
+| **Sanctions risk** | sanction/penalty term AND risk/uncertainty term |
+| **Embargo risk** | embargo/export-ban term AND risk/uncertainty term |
+| **Geopolitical risk** | geopolitical term AND risk/uncertainty term |
+
+**Results (Q4 2025 corpus):**
+- 1,626 documents flagged (out of 2,907 total, 55.9%)
+- Trade risk: 1,512 documents
+- Geopolitical risk: 354 documents
+- Sanctions risk: 9 documents
+- Embargo risk: 1 document
+
+**Outputs:**
+- `data/geoeconomic_matches.csv` — all 2,907 documents with per-category flags
+- `data/geoeconomic_matches_flagged.csv` — 1,626 matched documents only
+- `figures/10–13` — match-count bar chart, by-period breakdown, top companies,
+  category co-occurrence matrix
+
+---
+
+### `04_llm_context_analysis.py`
+
+For each of the 1,626 flagged transcripts, uses the Claude API to classify
+the *context* in which geoeconomic risk is discussed. Extracts the sentences
+surrounding keyword hits and asks a structured set of questions, returning a
+JSON record per document.
+
+**Questions answered for each transcript:**
+
+| Field | Question |
+|---|---|
+| `firm_operations_relevance` | Is the risk discussed in direct relation to this firm's own revenues, costs, supply chain, or operations? |
+| `macro_context` | Is the risk placed in a broader macroeconomic or industry-wide frame? |
+| `speaker_attribution` | Who raises the topic — executives only, analysts only, or both? |
+| `response_discussed` | Does management describe concrete actions taken or planned in response? |
+| `increase_investments` | Does the firm mention increasing capex or expanding capacity as a response? |
+| `decrease_investments` | Does the firm mention cutting or deferring investment as a response? |
+| `find_new_suppliers` | Does the firm mention diversifying its supply base or sourcing from alternative regions? |
+| `stop_exports` | Does the firm mention halting or reducing exports or withdrawing from affected markets? |
+
+**Requires:** `ANTHROPIC_API_KEY` environment variable set.
+
+**Run:**
+```bash
+source /path/to/.venv/bin/activate
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+# Full run (~1,626 documents)
+python 04_llm_context_analysis.py
+
+# Test on a small sample first
+python 04_llm_context_analysis.py --limit 20
+
+# Resume an interrupted run
+python 04_llm_context_analysis.py --resume
+
+# Use a more capable model
+python 04_llm_context_analysis.py --model claude-sonnet-4-6
+```
+
+**Output:**
+- `data/geoeconomic_context.json` — array of JSON objects, one per document
+
+---
+
 ## Output figures
 
 | File | Description |
@@ -143,6 +220,10 @@ the corpus is dominated by the Q4 2025 earnings season.
 | `figures/07_topic_heatmap_by_period.png` | Topic × period heatmap |
 | `figures/08_topic_terms_dotplot.png` | β matrix dot plot |
 | `figures/09_dominant_topic_by_period.png` | Dominant topic share per reporting period |
+| `figures/10_georisk_match_counts.png` | Geoeconomic risk match counts by category |
+| `figures/11_georisk_by_period.png` | Flagged documents by reporting period and category |
+| `figures/12_georisk_top_companies.png` | Top 20 companies by geoeconomic risk mentions |
+| `figures/13_georisk_cooccurrence.png` | Co-occurrence matrix across risk categories |
 
 ---
 
@@ -150,15 +231,20 @@ the corpus is dominated by the Q4 2025 earnings season.
 
 ```
 .
-├── 00_prepare_corpus.R          # R: corpus assembly and speaker classification
-├── 01_topic_modeling.ipynb      # Python: LDA topic modeling
-├── 02_visualize_topics.R        # R: ggplot2 visualization
+├── 00_prepare_corpus.R           # R: corpus assembly and speaker classification
+├── 01_topic_modeling.ipynb       # Python: LDA topic modeling
+├── 02_visualize_topics.R         # R: ggplot2 visualization
+├── 03_geoeconomic_search.ipynb   # Python: dictionary-based geoeconomic risk search
+├── 04_llm_context_analysis.py    # Python: LLM context classification (Claude API)
 ├── data/
-│   ├── doc_topic_distributions.csv   # γ matrix (document–topic)
-│   ├── topic_terms.csv               # β matrix (topic–term)
-│   ├── role_topic_comparison.csv     # topic proportions by speaker role
-│   └── top_docs_per_topic.csv        # most representative docs per topic
-└── figures/                     # all PNG outputs
+│   ├── doc_topic_distributions.csv    # γ matrix (document–topic)
+│   ├── topic_terms.csv                # β matrix (topic–term)
+│   ├── role_topic_comparison.csv      # topic proportions by speaker role
+│   ├── top_docs_per_topic.csv         # most representative docs per topic
+│   ├── geoeconomic_matches.csv        # all docs with per-category flags
+│   ├── geoeconomic_matches_flagged.csv # flagged docs only (1,626)
+│   └── geoeconomic_context.json       # LLM context classification results
+└── figures/                      # all PNG outputs (00–13)
 ```
 
 Files generated at runtime (excluded from version control):
@@ -180,3 +266,5 @@ data/corpus_speaker_level.csv    # regenerate with 00_prepare_corpus.R
 - The Anaconda Python environment on the development machine has a NumPy 2.0
   incompatibility with older compiled packages. Always use the dedicated `.venv`
   (Python 3.10) from the scraper project directory.
+- `04_llm_context_analysis.py` writes a rolling checkpoint every 50 documents
+  so that a long run can be safely interrupted and resumed with `--resume`.
