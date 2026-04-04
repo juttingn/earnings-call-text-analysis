@@ -257,7 +257,7 @@ def main():
     print("Loading corpus documents …")
     corpus = pd.read_csv(
         "data/corpus_documents.csv",
-        usecols=["url", "full_text", "executive_text", "analyst_text"],
+        usecols=["url", "full_text", "exec_text", "analyst_text"],
     )
 
     df = flagged.merge(corpus, on="url", how="left")
@@ -292,7 +292,7 @@ def main():
         excerpts = extract_excerpts(str(row.get("full_text") or ""))
         if not excerpts:
             combined = " ".join([
-                str(row.get("executive_text") or ""),
+                str(row.get("exec_text") or ""),
                 str(row.get("analyst_text") or ""),
             ])
             excerpts = extract_excerpts(combined)
