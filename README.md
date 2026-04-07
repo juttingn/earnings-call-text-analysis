@@ -24,7 +24,7 @@ dictionary-based keyword counts on earnings call transcripts — a useful but
 inherently limited approach. By gaining full access to the raw transcripts, I
 can now apply more sophisticated methods to the same underlying material.
 
-The analysis unfolds in two parts:
+The analysis unfolds in three parts:
 
 1. **Broad topic exploration** (Part 1): apply unsupervised topic modeling
    (LDA) to the full corpus to map the latent topical structure of earnings
@@ -32,42 +32,65 @@ The analysis unfolds in two parts:
    distributed across the Q4 2025 reporting season, and whether executive
    speech and analyst questions reflect distinct topical priorities.
 
-2. **Geoeconomic risk deep-dive** (Part 2): zoom in on the documents most
-   associated with geoeconomic language — trade policy, sanctions, embargoes,
-   geopolitical uncertainty — and use a large language model to classify the
-   context in which that risk is discussed at the firm level. This extends the
-   Master Thesis analysis to a richer linguistic window, moving beyond keyword
-   counts to structured inference about firm-level risk exposure and response.
+2. **Geoeconomic risk search** (Part 2): a dictionary-based keyword search
+   that flags transcripts where a geoeconomic risk term and an uncertainty
+   term co-occur **in the same sentence**, followed by an LLM-based context
+   classifier that characterises how and by whom the risk is discussed.
+
+3. **Sentiment analysis with FinBERT** (Part 3): a domain-adapted BERT model
+   assigns positive/negative/neutral sentiment scores to each transcript,
+   enabling comparison of tone across topics, reporting periods, and speaker
+   roles.
+
+---
+
+## A note on sample balance
+
+> **All cross-quarter comparisons in this analysis are illustrative only.**
+>
+> The corpus is dominated by **Q4 2025 earnings calls** (~1,850 transcripts out
+> of ~2,900 total). The remaining quarters each contain between a handful and a
+> few hundred transcripts, reflecting companies with non-calendar fiscal years.
+> Ideally this analysis would be run on a corpus with a comparable number of
+> transcripts per quarter so that temporal trends are not confounded with sample
+> composition. Figures showing distributions by reporting period include n=
+> labels for this reason; interpret quarter-to-quarter differences with caution.
 
 ---
 
 ## Pipeline
 
 ```
-00_prepare_corpus.R          (R)
+00_prepare_corpus.R              (R)
         ↓
    data/corpus_documents.csv
    data/corpus_speaker_level.csv
         ↓
-01_topic_modeling.ipynb      (Python / gensim)
+01_topic_modeling.ipynb          (Python / gensim)
         ↓
    data/doc_topic_distributions.csv
    data/topic_terms.csv
    data/role_topic_comparison.csv
         ↓
-02_visualize_topics.R        (R / ggplot2)
+02_visualize_topics.R            (R / ggplot2)
         ↓
-   figures/00–09  (PNG outputs)
+   figures/07, 09
         ↓
-03_geoeconomic_search.ipynb  (Python / regex)
+03_geoeconomic_search.ipynb      (Python / regex)
         ↓
    data/geoeconomic_matches.csv
    data/geoeconomic_matches_flagged.csv
-   figures/10–13  (PNG outputs)
+   figures/10, 11, 12
         ↓
-04_llm_context_analysis.py   (Python / Claude API)
+04_llm_context_analysis.py       (Python / OpenRouter API)
         ↓
    data/geoeconomic_context.json
+        ↓
+05_finbert_sentiment.ipynb       (Python / HuggingFace FinBERT)
+        ↓
+   data/finbert_sentiment.csv
+   data/finbert_results.csv
+   figures/14–18
 ```
 
 ---
@@ -97,34 +120,26 @@ investor-relations, operator), and aggregates text at the transcript level.
 The main topic-modeling notebook. Preprocesses the corpus (tokenization,
 custom earnings-call stopword removal, lemmatization), fits an LDA model
 using [gensim](https://radimrehurek.com/gensim/), selects the optimal number
-of topics via coherence scoring, and compares the topic footprints of
+of topics (K=20) via coherence scoring, and compares the topic footprints of
 executive and analyst speech.
 
-**Requires:** the `.venv` Python 3.10 environment from the scraper project
-(or any environment with `gensim`, `nltk`, `pandas`, `matplotlib`,
-`scikit-learn`).
+**Requires:** the `.venv` Python 3.10 environment from the scraper project.
 
 **Outputs:**
 - `data/doc_topic_distributions.csv` — γ matrix: per-document topic proportions
 - `data/topic_terms.csv` — β matrix: top 30 terms per topic with probabilities
 - `data/role_topic_comparison.csv` — topic proportions by speaker role
 
-**Run in Jupyter:**
-```bash
-source /path/to/.venv/bin/activate
-jupyter lab 01_topic_modeling.ipynb
-```
-
 ---
 
 ### `02_visualize_topics.R`
 
-Reads the LDA outputs and produces a series of publication-quality figures
-using ggplot2. Temporal charts are restricted to Q4 2025 and earlier, since
-the corpus is dominated by the Q4 2025 earnings season.
+Reads the LDA outputs and produces publication-quality figures using ggplot2.
+All available reporting quarters are shown; n= labels flag sample sizes so
+the Q4 2025 dominance is immediately apparent.
 
 **Required R packages:** `dplyr`, `tidyr`, `readr`, `lubridate`, `ggplot2`,
-`forcats`, `stringr`, `tidytext`, `scales`
+`forcats`, `stringr`, `scales`
 
 **Run:**
 ```bash
@@ -135,74 +150,104 @@ the corpus is dominated by the Q4 2025 earnings season.
 
 ### `03_geoeconomic_search.ipynb`
 
-Dictionary-based keyword search across all 2,907 transcripts. Flags documents
-that contain a co-occurrence of at least one topic keyword and one
-risk/uncertainty keyword from four geoeconomic risk categories:
+Dictionary-based keyword search across all 2,907 transcripts. A transcript is
+flagged only if at least one geoeconomic term and one risk/uncertainty term
+appear in the **same sentence** — sentence-level co-occurrence rather than a
+weaker document-level AND. This avoids false positives from transcripts that
+happen to mention both term types in completely unrelated passages.
 
-| Category | Logic |
+**Four risk categories:**
+
+| Category | Sentence-level logic |
 |---|---|
-| **Trade risk** | (trade-policy term AND risk/uncertainty term) OR (trade-flow term AND trade-restriction term) |
-| **Sanctions risk** | sanction/penalty term AND risk/uncertainty term |
-| **Embargo risk** | embargo/export-ban term AND risk/uncertainty term |
-| **Geopolitical risk** | geopolitical term AND risk/uncertainty term |
+| **Trade risk** | (trade-policy term AND risk term) OR (trade-flow term AND trade-restriction term) |
+| **Sanctions risk** | sanction/penalty term AND risk term |
+| **Embargo risk** | embargo/export-ban term AND risk term |
+| **Geopolitical risk** | geopolitical term AND risk term (six sub-conditions) |
 
-**Results (Q4 2025 corpus):**
-- 1,626 documents flagged (out of 2,907 total, 55.9%)
-- Trade risk: 1,512 documents
-- Geopolitical risk: 354 documents
-- Sanctions risk: 9 documents
-- Embargo risk: 1 document
+**Results (sentence-level matching):**
+- 250 documents flagged (out of 2,907 total, 8.6%)
+- Trade risk: 205 documents
+- Geopolitical risk: 60 documents
+- Sanctions risk: 2 documents
+- Embargo risk: 0 documents
 
 **Outputs:**
-- `data/geoeconomic_matches.csv` — all 2,907 documents with per-category flags
-- `data/geoeconomic_matches_flagged.csv` — 1,626 matched documents only
-- `figures/10–13` — match-count bar chart, by-period breakdown, top companies,
-  category co-occurrence matrix
+- `data/geoeconomic_matches.csv` — all documents with per-category flags
+- `data/geoeconomic_matches_flagged.csv` — 250 matched documents only
+- `figures/10–12` — bar chart, by-period breakdown, top companies
 
 ---
 
 ### `04_llm_context_analysis.py`
 
-For each of the 1,626 flagged transcripts, uses the Claude API to classify
-the *context* in which geoeconomic risk is discussed. Extracts the sentences
-surrounding keyword hits and asks a structured set of questions, returning a
-JSON record per document.
+For each flagged transcript, uses an LLM (via
+[OpenRouter](https://openrouter.ai)) to classify the *context* in which
+geoeconomic risk is discussed. Extracts sentences surrounding keyword hits and
+asks a structured set of questions.
 
 **Questions answered for each transcript:**
 
 | Field | Question |
 |---|---|
-| `firm_operations_relevance` | Is the risk discussed in direct relation to this firm's own revenues, costs, supply chain, or operations? |
+| `firm_operations_relevance` | Is the risk tied to this firm's own revenues, costs, supply chain, or operations? |
 | `macro_context` | Is the risk placed in a broader macroeconomic or industry-wide frame? |
 | `speaker_attribution` | Who raises the topic — executives only, analysts only, or both? |
-| `response_discussed` | Does management describe concrete actions taken or planned in response? |
-| `increase_investments` | Does the firm mention increasing capex or expanding capacity as a response? |
-| `decrease_investments` | Does the firm mention cutting or deferring investment as a response? |
-| `find_new_suppliers` | Does the firm mention diversifying its supply base or sourcing from alternative regions? |
-| `stop_exports` | Does the firm mention halting or reducing exports or withdrawing from affected markets? |
-
-**Requires:** `ANTHROPIC_API_KEY` environment variable set.
+| `response_discussed` | Does management describe concrete actions in response? |
+| `increase_investments` | Increasing capex or expanding capacity as a response? |
+| `decrease_investments` | Cutting or deferring investment as a response? |
+| `find_new_suppliers` | Diversifying supply base or sourcing from alternative regions? |
+| `stop_exports` | Halting or reducing exports or withdrawing from affected markets? |
 
 **Run:**
 ```bash
-source /path/to/.venv/bin/activate
-export ANTHROPIC_API_KEY="sk-ant-..."
-
-# Full run (~1,626 documents)
-python 04_llm_context_analysis.py
-
-# Test on a small sample first
-python 04_llm_context_analysis.py --limit 20
-
-# Resume an interrupted run
-python 04_llm_context_analysis.py --resume
-
-# Use a more capable model
-python 04_llm_context_analysis.py --model claude-sonnet-4-6
+export OPENROUTER_API_KEY="sk-or-v1-..."
+python 04_llm_context_analysis.py --limit 20   # test
+python 04_llm_context_analysis.py              # full run (250 docs)
+python 04_llm_context_analysis.py --resume     # resume if interrupted
 ```
 
-**Output:**
-- `data/geoeconomic_context.json` — array of JSON objects, one per document
+**Output:** `data/geoeconomic_context.json`
+
+---
+
+### `05_finbert_sentiment.ipynb`
+
+Complements the LDA topic model with a **FinBERT sentiment analysis**.
+
+**Why FinBERT?** Standard sentiment tools (VADER, TextBlob) are trained on
+general-purpose text and struggle with financial language: words like
+"impairment," "write-down," or "guidance cut" carry clear negative meaning in
+financial discourse but may not score accordingly in a generic model.
+FinBERT ([Araci, 2019](https://arxiv.org/abs/1908.10063)) is a BERT-base model
+fine-tuned on ~10,000 financial news sentences (Reuters, Bloomberg) and the
+Financial PhraseBank. It assigns **positive / negative / neutral** labels with
+calibrated probabilities and substantially outperforms generic models on
+financial sentiment benchmarks.
+
+**How it complements LDA:** LDA reveals *what topics* are discussed; FinBERT
+reveals *with what tone*. Together they provide a richer picture — e.g.,
+identifying which LDA topics are discussed most negatively, whether executives
+speak more positively than analysts, and whether geoeconomic-flagged transcripts
+carry a meaningfully more negative tone.
+
+Because BERT has a 512-token limit, transcripts are split into 400-token
+sentence-aligned chunks; scores are averaged across chunks to produce a
+document-level estimate.
+
+**Outputs:**
+- `data/finbert_sentiment.csv` — raw scores per document
+- `data/finbert_results.csv` — merged with LDA topics and geoeconomic flags
+- `figures/14–18` — sentiment distributions and comparisons
+
+**Run (requires `.venv`, GPU recommended for speed):**
+```bash
+source /path/to/.venv/bin/activate
+jupyter nbconvert --to notebook --execute --inplace \
+  --ExecutePreprocessor.kernel_name=earnings-venv \
+  --ExecutePreprocessor.timeout=7200 \
+  05_finbert_sentiment.ipynb
+```
 
 ---
 
@@ -215,15 +260,16 @@ python 04_llm_context_analysis.py --model claude-sonnet-4-6
 | `figures/02_coherence_scores.png` | LDA coherence curve for K selection |
 | `figures/03_topic_top_terms.png` | Top 10 terms per topic (grid) |
 | `figures/04_executive_vs_analyst_topics.png` | Topic fingerprints by speaker role |
-| `figures/05_topic_by_reporting_period.png` | Topic composition per reporting quarter |
-| `figures/06_weekly_topic_trajectories.png` | Weekly topic trajectories (Q4 2025 season) |
-| `figures/07_topic_heatmap_by_period.png` | Topic × period heatmap |
-| `figures/08_topic_terms_dotplot.png` | β matrix dot plot |
-| `figures/09_dominant_topic_by_period.png` | Dominant topic share per reporting period |
+| `figures/07_topic_heatmap_by_period.png` | Topic × period heatmap (all quarters, n= labels) |
+| `figures/09_dominant_topic_by_period.png` | Dominant topic share per reporting period (all quarters, n= labels) |
 | `figures/10_georisk_match_counts.png` | Geoeconomic risk match counts by category |
-| `figures/11_georisk_by_period.png` | Flagged documents by reporting period and category |
+| `figures/11_georisk_by_period.png` | Flagged documents by reporting period and category (all quarters, n= labels) |
 | `figures/12_georisk_top_companies.png` | Top 20 companies by geoeconomic risk mentions |
-| `figures/13_georisk_cooccurrence.png` | Co-occurrence matrix across risk categories |
+| `figures/14_finbert_sentiment_dist.png` | Overall sentiment distribution (FinBERT) |
+| `figures/15_finbert_by_topic.png` | Net sentiment by LDA topic |
+| `figures/16_finbert_by_period.png` | Net sentiment by reporting quarter |
+| `figures/17_finbert_exec_vs_analyst.png` | Executive vs analyst net sentiment |
+| `figures/18_finbert_georisk_vs_not.png` | Geoeconomic-flagged vs non-flagged sentiment |
 
 ---
 
@@ -233,18 +279,21 @@ python 04_llm_context_analysis.py --model claude-sonnet-4-6
 .
 ├── 00_prepare_corpus.R           # R: corpus assembly and speaker classification
 ├── 01_topic_modeling.ipynb       # Python: LDA topic modeling
-├── 02_visualize_topics.R         # R: ggplot2 visualization
-├── 03_geoeconomic_search.ipynb   # Python: dictionary-based geoeconomic risk search
-├── 04_llm_context_analysis.py    # Python: LLM context classification (Claude API)
+├── 02_visualize_topics.R         # R: ggplot2 visualizations (figures 07, 09)
+├── 03_geoeconomic_search.ipynb   # Python: sentence-level geoeconomic risk search
+├── 04_llm_context_analysis.py    # Python: LLM context classification (OpenRouter)
+├── 05_finbert_sentiment.ipynb    # Python: FinBERT sentiment analysis
 ├── data/
 │   ├── doc_topic_distributions.csv    # γ matrix (document–topic)
 │   ├── topic_terms.csv                # β matrix (topic–term)
 │   ├── role_topic_comparison.csv      # topic proportions by speaker role
 │   ├── top_docs_per_topic.csv         # most representative docs per topic
 │   ├── geoeconomic_matches.csv        # all docs with per-category flags
-│   ├── geoeconomic_matches_flagged.csv # flagged docs only (1,626)
-│   └── geoeconomic_context.json       # LLM context classification results
-└── figures/                      # all PNG outputs (00–13)
+│   ├── geoeconomic_matches_flagged.csv # flagged docs only (250)
+│   ├── geoeconomic_context.json       # LLM context classification results
+│   ├── finbert_sentiment.csv          # raw FinBERT scores per document
+│   └── finbert_results.csv            # merged: scores + topics + geo flags
+└── figures/                      # all PNG outputs (00–04, 07, 09–12, 14–18)
 ```
 
 Files generated at runtime (excluded from version control):
@@ -255,16 +304,9 @@ data/corpus_speaker_level.csv    # regenerate with 00_prepare_corpus.R
 
 ---
 
-## Notes
+## Environment
 
-- The corpus was scraped in February–March 2026 and is therefore dominated by
-  **Q4 2025 earnings calls** (~1,850 transcripts). The remaining ~450 calls
-  reflect companies with non-calendar fiscal years (Q1–Q3 2026 designations).
-- About 590 entries are **investor conference presentations** rather than
-  quarterly earnings calls; they are included in the topic model but excluded
-  from quarterly temporal comparisons.
-- The Anaconda Python environment on the development machine has a NumPy 2.0
-  incompatibility with older compiled packages. Always use the dedicated `.venv`
-  (Python 3.10) from the scraper project directory.
-- `04_llm_context_analysis.py` writes a rolling checkpoint every 50 documents
-  so that a long run can be safely interrupted and resumed with `--resume`.
+- **R:** `/usr/local/bin/Rscript` (system R; do **not** use the Anaconda R at `/Users/.../anaconda3/bin/R`)
+- **Python:** `.venv/` inside the scraper project directory (Python 3.10, NumPy < 2); the Anaconda base environment has a NumPy 2.0 incompatibility. Always activate the dedicated `.venv`.
+- `04_llm_context_analysis.py` writes a rolling checkpoint every 20 documents so a long run can be safely interrupted and resumed with `--resume`.
+- `05_finbert_sentiment.ipynb` caches inference results to `data/finbert_sentiment.csv` so re-runs are instant.
