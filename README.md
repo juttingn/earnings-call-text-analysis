@@ -26,21 +26,22 @@ can now apply more sophisticated methods to the same underlying material.
 
 The analysis unfolds in three parts:
 
-1. **Broad topic exploration** (Part 1): apply unsupervised topic modeling
-   (LDA) to the full corpus to map the latent topical structure of earnings
-   call discourse, understand which sectors dominate, how topics are
-   distributed across the Q4 2025 reporting season, and whether executive
-   speech and analyst questions reflect distinct topical priorities.
+1. **Broad topic exploration** (scripts 01–02): apply unsupervised topic
+   modeling (LDA) to the full corpus to map the latent topical structure of
+   earnings call discourse, understand which sectors dominate, how topics vary
+   across reporting quarters, and whether executive speech and analyst questions
+   reflect distinct topical priorities.
 
-2. **Geoeconomic risk search** (Part 2): a dictionary-based keyword search
-   that flags transcripts where a geoeconomic risk term and an uncertainty
-   term co-occur **in the same sentence**, followed by an LLM-based context
-   classifier that characterises how and by whom the risk is discussed.
-
-3. **Sentiment analysis with FinBERT** (Part 3): a domain-adapted BERT model
-   assigns positive/negative/neutral sentiment scores to each transcript,
+2. **Sentiment analysis with FinBERT** (scripts 03–04): a domain-adapted BERT
+   model assigns positive/negative/neutral sentiment scores to each transcript,
    enabling comparison of tone across topics, reporting periods, and speaker
    roles.
+
+3. **Geoeconomic risk analysis** (scripts 05–07): a sentence-level
+   dictionary search flags transcripts where a geoeconomic risk term and an
+   uncertainty term co-occur in the same sentence; an LLM context classifier
+   then characterises how and by whom the risk is discussed, and a final
+   visualisation notebook summarises the results.
 
 ---
 
@@ -155,37 +156,6 @@ the Q4 2025 dominance is immediately apparent.
 
 ---
 
-### `03_geoeconomic_search.ipynb`
-
-Dictionary-based keyword search across all 2,907 transcripts. A transcript is
-flagged only if at least one geoeconomic term and one risk/uncertainty term
-appear in the **same sentence** — sentence-level co-occurrence rather than a
-weaker document-level AND. This avoids false positives from transcripts that
-happen to mention both term types in completely unrelated passages.
-
-**Four risk categories:**
-
-| Category | Sentence-level logic |
-|---|---|
-| **Trade risk** | (trade-policy term AND risk term) OR (trade-flow term AND trade-restriction term) |
-| **Sanctions risk** | sanction/penalty term AND risk term |
-| **Embargo risk** | embargo/export-ban term AND risk term |
-| **Geopolitical risk** | geopolitical term AND risk term (six sub-conditions) |
-
-**Results (sentence-level matching):**
-- 250 documents flagged (out of 2,907 total, 8.6%)
-- Trade risk: 205 documents
-- Geopolitical risk: 60 documents
-- Sanctions risk: 2 documents
-- Embargo risk: 0 documents
-
-**Outputs:**
-- `data/geoeconomic_matches.csv` — all documents with per-category flags
-- `data/geoeconomic_matches_flagged.csv` — 250 matched documents only
-- `figures/10–12` — bar chart, by-period breakdown, top companies
-
----
-
 ### `03_finbert_inference.py`
 
 Standalone batch inference script that runs FinBERT on all corpus documents.
@@ -232,6 +202,37 @@ document-level estimate.
 **Outputs:**
 - `data/finbert_results.csv` — merged: scores + LDA topics + geoeconomic flags
 - `figures/14–18` — sentiment distributions and comparisons
+
+---
+
+### `05_geoeconomic_search.ipynb`
+
+Dictionary-based keyword search across all 2,907 transcripts. A transcript is
+flagged only if at least one geoeconomic risk term and one uncertainty term
+appear in the **same sentence** — sentence-level co-occurrence rather than a
+weaker document-level AND. This avoids false positives from transcripts that
+happen to mention both term types in completely unrelated passages.
+
+**Four risk categories:**
+
+| Category | Sentence-level logic |
+|---|---|
+| **Trade risk** | (trade-policy term AND risk term) OR (trade-flow term AND trade-restriction term) |
+| **Sanctions risk** | sanction/penalty term AND risk term |
+| **Embargo risk** | embargo/export-ban term AND risk term |
+| **Geopolitical risk** | geopolitical term AND risk term (six sub-conditions) |
+
+**Results (sentence-level matching):**
+- 250 documents flagged (out of 2,907 total, 8.6%)
+- Trade risk: 205 documents
+- Geopolitical risk: 60 documents
+- Sanctions risk: 2 documents
+- Embargo risk: 0 documents
+
+**Outputs:**
+- `data/geoeconomic_matches.csv` — all documents with per-category flags
+- `data/geoeconomic_matches_flagged.csv` — 250 flagged documents only
+- `figures/10–12` — match counts by category, by-period breakdown, top companies
 
 ---
 
