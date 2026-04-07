@@ -3,25 +3,25 @@
 04_llm_context_analysis.py
 
 For each transcript flagged as containing geoeconomic risk language,
-uses the Claude API to classify the context in which that risk is
+uses an LLM via OpenRouter to classify the context in which that risk is
 discussed. Results are written to data/geoeconomic_context.json.
 
 Usage
 -----
     source /path/to/.venv/bin/activate
-    export ANTHROPIC_API_KEY="sk-ant-..."
+    export OPENROUTER_API_KEY="sk-or-v1-..."
 
-    # Full run (1,626 documents, ~30–45 min with default rate limit)
+    # Full run (1,626 documents)
     python 04_llm_context_analysis.py
 
-    # Test on first 20 documents
-    python 04_llm_context_analysis.py --limit 20
+    # Test on first 5 documents
+    python 04_llm_context_analysis.py --limit 5
 
-    # Resume a previously interrupted run
+    # Resume an interrupted run
     python 04_llm_context_analysis.py --resume
 
-    # Use a different model
-    python 04_llm_context_analysis.py --model claude-sonnet-4-6
+    # Use a different OpenRouter model
+    python 04_llm_context_analysis.py --model meta-llama/llama-3.3-70b-instruct:free
 
 Output
 ------
@@ -36,21 +36,23 @@ import json
 import time
 import argparse
 import pandas as pd
-import anthropic
+from openai import OpenAI
 from pathlib import Path
 
 # ── Configuration ──────────────────────────────────────────────────────────────
-DEFAULT_MODEL     = "claude-haiku-4-5-20251001"   # fast & cheap for batch work
+DEFAULT_MODEL     = "google/gemma-3-27b-it:free"
+OPENROUTER_BASE   = "https://openrouter.ai/api/v1"
 OUTPUT_PATH       = Path("data/geoeconomic_context.json")
 CHECKPOINT_PATH   = Path("data/.geoeconomic_context_ckpt.json")
-CONTEXT_SENTENCES = 2      # extra sentences before/after each keyword hit
-MAX_EXCERPT_CHARS = 5_000  # hard cap on excerpt length sent to the model
-REQUESTS_PER_SEC  = 1.0    # conservative; increase if your tier allows it
-CHECKPOINT_EVERY  = 50     # save checkpoint after every N new documents
+CONTEXT_SENTENCES = 2       # extra sentences before/after each keyword hit
+MAX_EXCERPT_CHARS = 4_000   # hard cap on excerpt length sent to the model
+REQUESTS_PER_SEC  = 0.33    # ~3 s between requests; free models have low limits
+CHECKPOINT_EVERY  = 20      # save checkpoint after every N new documents
+MAX_RETRIES       = 3       # retry on transient errors before recording failure
 
 # Broad pattern for locating sentences that warrant inclusion in excerpts.
-# This is intentionally wider than the strict dictionary used in notebook 03;
-# the LLM does the precise contextual judgement.
+# Intentionally wider than the strict dictionary in notebook 03 — the LLM
+# does the precise contextual judgement.
 _EXCERPT_RE = re.compile(
     r'\b(?:'
     r'tariff|trade[\s\-]{0,5}(?:war|polic|tension|disput|deal|agreement)|'
@@ -117,7 +119,7 @@ FIELD DEFINITIONS
   "analyst_only"   — Only external sell-side analysts bring it up.
   "both"           — Both management and analysts engage with the topic.
   If attribution is ambiguous, choose the most likely option based on
-  conversational cues (e.g., "your" = analyst addressing management).
+  conversational cues (e.g., "your exposure to…" = analyst addressing mgmt).
 
 "response_discussed"  [boolean]
   true  — Management describes at least one specific, concrete action —
@@ -156,7 +158,7 @@ FIELD DEFINITIONS
   false — No such response is mentioned.
 
 ────────────────────────────────────────────────────────────
-Return ONLY this JSON (fill in the values):
+Return ONLY this JSON (replace the placeholder values with your answers):
 {{"firm_operations_relevance": true, "macro_context": true, \
 "speaker_attribution": "both", "response_discussed": false, \
 "increase_investments": false, "decrease_investments": false, \
@@ -167,10 +169,7 @@ Return ONLY this JSON (fill in the values):
 # ── Helper functions ───────────────────────────────────────────────────────────
 
 def extract_excerpts(text: str) -> str:
-    """
-    Return the sentences surrounding each keyword hit, deduplicated and joined.
-    Falls back to an empty string if no hits are found.
-    """
+    """Return sentences surrounding keyword hits, deduplicated and joined."""
     if not isinstance(text, str) or not text.strip():
         return ""
     sentences = re.split(r'(?<=[.!?])\s+', text.strip())
@@ -184,8 +183,7 @@ def extract_excerpts(text: str) -> str:
                 include.add(j)
     if not include:
         return ""
-    excerpt = " ".join(sentences[i] for i in sorted(include))
-    return excerpt[:MAX_EXCERPT_CHARS]
+    return " ".join(sentences[i] for i in sorted(include))[:MAX_EXCERPT_CHARS]
 
 
 def get_risk_labels(row) -> list:
@@ -201,24 +199,35 @@ def get_risk_labels(row) -> list:
     return labels
 
 
-def call_claude(client, model: str, company: str, ticker: str,
-                period: str, risk_types: list, excerpts: str) -> dict:
-    prompt = _Q_TEMPLATE.format(
+def call_llm(client, model: str, company: str, ticker: str,
+             period: str, risk_types: list, excerpts: str) -> dict:
+    """Call OpenRouter and parse JSON response. Raises on parse failure."""
+    body = _Q_TEMPLATE.format(
         company=company,
         ticker=ticker,
         period=period,
         risk_types=", ".join(risk_types) if risk_types else "geoeconomic risk",
-        excerpts=excerpts or "(no excerpts extracted — full text may be unavailable)",
+        excerpts=excerpts or "(no excerpts extracted — full text unavailable)",
     )
-    response = client.messages.create(
+    # Prepend system instruction directly in the user message so the prompt
+    # works with models that do not support a separate "system" role
+    # (e.g. Google Gemma on AI Studio).
+    full_prompt = SYSTEM_PROMPT + "\n\n" + body
+
+    response = client.chat.completions.create(
+        extra_body={},
         model=model,
+        messages=[{"role": "user", "content": full_prompt}],
         max_tokens=300,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": prompt}],
+        temperature=0,
     )
-    raw = response.content[0].text.strip()
-    # Strip markdown code fences in case the model adds them despite instructions
+    raw = response.choices[0].message.content.strip()
+    # Strip markdown code fences the model may add despite instructions
     raw = re.sub(r"^```(?:json)?\s*|\s*```$", "", raw, flags=re.DOTALL).strip()
+    # Some models wrap the JSON in extra commentary — extract the first {...}
+    match = re.search(r'\{.*\}', raw, flags=re.DOTALL)
+    if match:
+        raw = match.group(0)
     return json.loads(raw)
 
 
@@ -230,7 +239,7 @@ def main():
     )
     parser.add_argument(
         "--model", default=DEFAULT_MODEL,
-        help=f"Claude model ID (default: {DEFAULT_MODEL})",
+        help=f"OpenRouter model ID (default: {DEFAULT_MODEL})",
     )
     parser.add_argument(
         "--limit", type=int, default=None,
@@ -242,13 +251,17 @@ def main():
     )
     args = parser.parse_args()
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
         raise RuntimeError(
-            "ANTHROPIC_API_KEY environment variable is not set.\n"
-            "Export it before running: export ANTHROPIC_API_KEY='sk-ant-...'"
+            "OPENROUTER_API_KEY environment variable is not set.\n"
+            "Export it before running: export OPENROUTER_API_KEY='sk-or-v1-...'"
         )
-    client = anthropic.Anthropic(api_key=api_key)
+
+    client = OpenAI(
+        base_url=OPENROUTER_BASE,
+        api_key=api_key,
+    )
 
     # ── Load data ──────────────────────────────────────────────────────────────
     print("Loading flagged transcripts …")
@@ -263,8 +276,10 @@ def main():
     df = flagged.merge(corpus, on="url", how="left")
 
     if args.limit:
-        df = df.head(args.limit)
-        print(f"Limited to first {args.limit} documents for testing.")
+        # For testing: prefer actual earnings calls with full metadata
+        has_full_meta = df["ticker"].notna() & df["reporting_period"].notna()
+        df = df[has_full_meta].head(args.limit)
+        print(f"Limited to first {args.limit} documents with full metadata for testing.")
 
     total = len(df)
     print(f"Documents to process: {total}\n")
@@ -277,7 +292,7 @@ def main():
         print(f"Resuming — {len(results)} documents already processed.\n")
 
     # ── Process ────────────────────────────────────────────────────────────────
-    for idx, (_, row) in enumerate(df.iterrows(), start=1):
+    for _, row in df.iterrows():
         url = str(row.get("url", ""))
 
         if args.resume and url in results:
@@ -288,47 +303,56 @@ def main():
         period     = str(row.get("reporting_period", "Unknown"))
         risk_types = get_risk_labels(row)
 
-        # Build excerpt: prefer full_text; fall back to exec+analyst concatenation
         excerpts = extract_excerpts(str(row.get("full_text") or ""))
         if not excerpts:
             combined = " ".join([
                 str(row.get("exec_text") or ""),
                 str(row.get("analyst_text") or ""),
             ])
-            excerpts = extract_excerpts(combined)
-            if not excerpts:
-                excerpts = combined[:MAX_EXCERPT_CHARS]
+            excerpts = extract_excerpts(combined) or combined[:MAX_EXCERPT_CHARS]
 
         done = len(results)
         print(f"  [{done + 1:>4}/{total}] {company} ({ticker}) | {period}")
 
-        try:
-            answer = call_claude(
-                client, args.model,
-                company, ticker, period, risk_types, excerpts,
-            )
-            record = {
-                "url":                url,
-                "company_name":       company,
-                "ticker":             ticker,
-                "reporting_period":   period,
-                "risk_types":         risk_types,
-                **answer,
-            }
-        except Exception as exc:
-            print(f"           ERROR — {exc}")
+        record = None
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                answer = call_llm(
+                    client, args.model,
+                    company, ticker, period, risk_types, excerpts,
+                )
+                record = {
+                    "url":              url,
+                    "company_name":     company,
+                    "ticker":           ticker,
+                    "reporting_period": period,
+                    "risk_types":       risk_types,
+                    "excerpts":         excerpts,
+                    **answer,
+                }
+                break
+            except Exception as exc:
+                msg = str(exc)
+                print(f"           attempt {attempt}/{MAX_RETRIES} failed: {msg}")
+                if attempt < MAX_RETRIES:
+                    # longer back-off for rate-limit errors
+                    wait = 30 if "429" in msg else 5 * attempt
+                    print(f"           ↳ waiting {wait}s …")
+                    time.sleep(wait)
+
+        if record is None:
             record = {
                 "url":              url,
                 "company_name":     company,
                 "ticker":           ticker,
                 "reporting_period": period,
                 "risk_types":       risk_types,
-                "error":            str(exc),
+                "excerpts":         excerpts,
+                "error":            "all retries exhausted",
             }
 
         results[url] = record
 
-        # Rolling checkpoint
         if len(results) % CHECKPOINT_EVERY == 0:
             with open(CHECKPOINT_PATH, "w") as f:
                 json.dump(results, f)
@@ -341,7 +365,6 @@ def main():
     with open(OUTPUT_PATH, "w") as f:
         json.dump(output_list, f, indent=2, ensure_ascii=False)
 
-    # Clean up checkpoint on success
     if CHECKPOINT_PATH.exists():
         CHECKPOINT_PATH.unlink()
 
