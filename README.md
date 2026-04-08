@@ -24,24 +24,50 @@ dictionary-based keyword counts on earnings call transcripts — a useful but
 inherently limited approach. By gaining full access to the raw transcripts, I
 can now apply more sophisticated methods to the same underlying material.
 
-The analysis unfolds in three parts:
+The analysis follows a deliberate progression from broad exploration to targeted
+precision, with each step motivated by the limitations of the one before it:
 
-1. **Broad topic exploration** (scripts 01–02): apply unsupervised topic
-   modeling (LDA) to the full corpus to map the latent topical structure of
-   earnings call discourse, understand which sectors dominate, how topics vary
-   across reporting quarters, and whether executive speech and analyst questions
-   reflect distinct topical priorities.
+**Step 1 — Exploratory topic modelling (LDA, scripts 01–02).**
+The starting point is purely inductive: with no prior assumptions about what
+matters in these transcripts, LDA maps the latent topical structure of the full
+corpus. This reveals what executives and analysts talk about most, how topics
+vary across sectors and reporting quarters, and whether management and analyst
+speech occupy different corners of the topical space. The output is a descriptive
+map of earnings-call discourse that motivates the more focused work that follows.
 
-2. **Sentiment analysis with FinBERT** (scripts 03–04): a domain-adapted BERT
-   model assigns positive/negative/neutral sentiment scores to each transcript,
-   enabling comparison of tone across topics, reporting periods, and speaker
-   roles.
+**Step 2 — Narrowing to geoeconomic risk (dictionary search, script 05).**
+The thesis research question is about *geoeconomic risk* specifically — how firms
+perceive and respond to trade policy uncertainty, sanctions, and geopolitical
+conflict. A sentence-level keyword search flags the 250 transcripts (8.6% of the
+corpus) where a geoeconomic term and a risk/uncertainty term co-occur in the same
+sentence. This is a deliberate step back toward the dictionary-based approach of
+the original thesis, but applied more carefully: sentence-level co-occurrence
+avoids the false positives that arise when both term types appear in entirely
+unrelated passages of the same document.
 
-3. **Geoeconomic risk analysis** (scripts 05–07): a sentence-level
-   dictionary search flags transcripts where a geoeconomic risk term and an
-   uncertainty term co-occur in the same sentence; an LLM context classifier
-   then characterises how and by whom the risk is discussed, and a final
-   visualisation notebook summarises the results.
+**Step 3 — Sentiment as a first characterisation (FinBERT, scripts 03–04).**
+With the geoeconomic-flagged transcripts identified, a natural first question is
+whether they are discussed in a more negative tone than the rest of the corpus.
+FinBERT — a BERT model fine-tuned on financial news text — assigns
+positive/negative/neutral scores to each transcript. The comparison between
+flagged and non-flagged documents provides a quick read on whether geoeconomic
+risk language is associated with a discernibly more negative register. In
+practice, the sentiment signal turns out to be only weakly discriminating: while
+flagged transcripts do score somewhat more negatively on average, the
+distributions overlap heavily. This limits what can be inferred from tone alone
+and motivates a more precise approach.
+
+**Step 4 — Structured LLM annotation (scripts 06–07).**
+Because sentiment alone cannot tell us *how* geoeconomic risk is discussed —
+whether it is tied to the firm's own operations, who raises it, and what
+management plans to do about it — the final step uses a large language model
+(`claude-haiku-4-5-20251001`) to classify each flagged transcript against eight
+structured questions. This transforms the raw text into actionable variables:
+firm-level relevance, macro framing, speaker attribution, and four concrete
+response types (increase investment, cut investment, diversify suppliers, reduce
+exports). Where FinBERT measures *tone*, the LLM annotation measures *content*,
+producing a richer and more interpretable picture of how U.S.-listed firms
+engage with geoeconomic risk in their earnings calls.
 
 ---
 
@@ -51,11 +77,13 @@ The analysis unfolds in three parts:
 >
 > The corpus is dominated by **Q4 2025 earnings calls** (~1,850 transcripts out
 > of ~2,900 total). The remaining quarters each contain between a handful and a
-> few hundred transcripts, reflecting companies with non-calendar fiscal years.
-> Ideally this analysis would be run on a corpus with a comparable number of
-> transcripts per quarter so that temporal trends are not confounded with sample
-> composition. Figures showing distributions by reporting period include n=
-> labels for this reason; interpret quarter-to-quarter differences with caution.
+> few hundred transcripts, reflecting companies with non-calendar fiscal years
+> (Q2 2025: 6, Q3 2025: 6, Q1 2026: 149, Q2 2026: 125, Q3 2026: 163,
+> Q4 2026: 15; plus ~590 undated conference presentations). Q1 2025 is entirely
+> absent from the corpus. Ideally this analysis would be run on a corpus with a
+> comparable number of transcripts per quarter so that temporal trends are not
+> confounded with sample composition. All temporal figures include n= labels for
+> this reason; interpret quarter-to-quarter differences with caution.
 
 ---
 

@@ -29,7 +29,8 @@ topic_cols <- names(gamma)[str_starts(names(gamma), "topic_")]
 K <- length(topic_cols)
 
 # All possible reporting periods in chronological order
-PERIOD_LEVELS <- c("Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025",
+# Q1 2025 has no transcripts in this corpus; start from Q2 2025
+PERIOD_LEVELS <- c("Q2 2025", "Q3 2025", "Q4 2025",
                    "Q1 2026", "Q2 2026", "Q3 2026", "Q4 2026")
 
 gamma <- gamma %>%
