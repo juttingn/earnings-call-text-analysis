@@ -132,6 +132,50 @@ topic_colors <- setNames(
 )
 
 # =============================================================================
+# Figure 0: Topic composition stacked bar  (all available reporting periods)
+# =============================================================================
+
+stacked_data <- period_topics %>%
+  filter(!is.na(reporting_period)) %>%
+  left_join(period_counts, by = "reporting_period") %>%
+  mutate(
+    period_label = paste0(as.character(reporting_period), "\n(n=", n, ")"),
+    period_label = factor(
+      period_label,
+      levels = unique(period_label[order(reporting_period)])
+    )
+  )
+
+p0 <- ggplot(stacked_data,
+             aes(x = period_label,
+                 y = share,
+                 fill = fct_reorder(label, topic_id))) +
+  geom_bar(stat = "identity", position = "stack",
+           colour = "white", linewidth = 0.25) +
+  scale_fill_manual(values = topic_colors, name = "Topic") +
+  scale_y_continuous(labels = scales::percent,
+                     expand = expansion(mult = c(0, 0.01))) +
+  labs(
+    title    = "Topic Composition by Reporting Period",
+    subtitle = "Mean topic probability share per fiscal quarter reported",
+    x        = "Reporting period (quarter & year)",
+    y        = "Share of topic probability",
+    caption  = "The corpus is dominated by Q4 2025 (~1,850 transcripts). Cross-quarter comparisons are illustrative only."
+  ) +
+  theme_earnings(base_size = 11) +
+  theme(
+    axis.text.x     = element_text(angle = 30, hjust = 1, lineheight = 1.2),
+    legend.position = "right"
+  )
+
+n_periods_stacked <- length(unique(stacked_data$period_label))
+ggsave("figures/05_topic_by_reporting_period.png", p0,
+       width  = max(10, n_periods_stacked * 1.6 + 3),
+       height = 6.5,
+       dpi = 160, bg = "white")
+cat("Saved figures/05_topic_by_reporting_period.png\n")
+
+# =============================================================================
 # Figure 1: Topic × period heatmap  (all available reporting periods)
 # =============================================================================
 

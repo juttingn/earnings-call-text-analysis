@@ -320,6 +320,7 @@ Visualises the LLM classification results from `data/geoeconomic_context.json`.
 | `figures/02_coherence_scores.png` | LDA coherence curve for K selection |
 | `figures/03_topic_top_terms.png` | Top 10 terms per topic (grid) |
 | `figures/04_executive_vs_analyst_topics.png` | Topic fingerprints by speaker role |
+| `figures/05_topic_by_reporting_period.png` | Topic composition stacked bar by reporting period (all quarters, n= labels) |
 | `figures/07_topic_heatmap_by_period.png` | Topic × period heatmap (all quarters, n= labels) |
 | `figures/09_dominant_topic_by_period.png` | Dominant topic share per reporting period (all quarters, n= labels) |
 | `figures/10_georisk_match_counts.png` | Geoeconomic risk match counts by category |
@@ -335,7 +336,6 @@ Visualises the LLM classification results from `data/geoeconomic_context.json`.
 | `figures/21_llm_response_types.png` | Management response types (among transcripts with concrete response) |
 | `figures/22_llm_risk_context_heatmap.png` | Risk category × context flag heatmap |
 | `figures/23_llm_relevance_by_period.png` | Firm relevance vs. macro framing by reporting period |
-| `figures/24_llm_top_companies_depth.png` | Top 20 companies by geoeconomic risk discussion depth |
 
 ---
 
@@ -361,7 +361,7 @@ Visualises the LLM classification results from `data/geoeconomic_context.json`.
 │   ├── geoeconomic_context.json       # LLM context classification results (250 docs)
 │   ├── finbert_sentiment.csv          # raw FinBERT scores per document
 │   └── finbert_results.csv            # merged: scores + topics + geo flags
-└── figures/                      # all PNG outputs (00–04, 07, 09–12, 14–24)
+└── figures/                      # all PNG outputs (00–05, 07, 09–12, 14–23)
 ```
 
 Files generated at runtime (excluded from version control):
